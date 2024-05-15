@@ -47,7 +47,7 @@ import SharedLanguageSwitcher from "@/components/shared/SharedLanguageSwitcher.v
       </RouterLink>
     </div>
     <div
-      class="-mt-40 flex h-screen-3/4 w-screen items-center bg-movie-1 bg-cover bg-center bg-no-repeat shadow-overlay laptop:-mt-80 laptop:h-screen laptop:bg-fixed laptop:shadow-overlay-lg"
+      class="bg-movie-interstellar -mt-40 flex h-screen-3/4 w-screen items-center bg-cover bg-center bg-no-repeat shadow-overlay laptop:-mt-80 laptop:h-screen laptop:bg-fixed laptop:shadow-overlay-lg"
     >
       <div class="ml-9 flex gap-2 text-white laptop:ml-40 laptop:gap-8">
         <span class="text-center text-xl laptop:text-5xl">―</span>
@@ -55,16 +55,16 @@ import SharedLanguageSwitcher from "@/components/shared/SharedLanguageSwitcher.v
           <h2
             class="align-text-center font-montserrat text-xl font-bold tracking-tight laptop:text-5xl"
           >
-            "{{ $t("landing.movie_1.quote") }}"
+            "{{ $t("landing.movie_interstellar.quote") }}"
           </h2>
           <p class="font-helvetica text-base font-bold laptop:text-3xl">
-            {{ $t("landing.movie_1.title") }}
+            {{ $t("landing.movie_interstellar.title") }}
           </p>
         </div>
       </div>
     </div>
     <div
-      class="flex h-screen-3/4 w-screen items-center bg-movie-2 bg-cover bg-center bg-no-repeat shadow-overlay laptop:h-screen laptop:bg-fixed laptop:shadow-overlay-lg"
+      class="bg-movie-royal-tenenbaums flex h-screen-3/4 w-screen items-center bg-cover bg-center bg-no-repeat shadow-overlay laptop:h-screen laptop:bg-fixed laptop:shadow-overlay-lg"
     >
       <div class="ml-9 flex gap-2 text-white laptop:ml-40 laptop:gap-8">
         <span class="text-center text-xl laptop:text-5xl">―</span>
@@ -72,16 +72,16 @@ import SharedLanguageSwitcher from "@/components/shared/SharedLanguageSwitcher.v
           <h2
             class="align-text-center font-montserrat text-xl font-bold tracking-tight laptop:text-5xl"
           >
-            "{{ $t("landing.movie_2.quote") }}"
+            "{{ $t("landing.movie_royal_tenenbaums.quote") }}"
           </h2>
           <p class="font-helvetica text-base font-bold laptop:text-3xl">
-            {{ $t("landing.movie_2.title") }}
+            {{ $t("landing.movie_royal_tenenbaums.title") }}
           </p>
         </div>
       </div>
     </div>
     <div
-      class="flex h-screen-3/4 w-screen items-center bg-movie-3 bg-cover bg-center bg-no-repeat shadow-overlay laptop:h-screen laptop:bg-fixed laptop:shadow-overlay-lg"
+      class="bg-movie-lord-of-rings flex h-screen-3/4 w-screen items-center bg-cover bg-center bg-no-repeat shadow-overlay laptop:h-screen laptop:bg-fixed laptop:shadow-overlay-lg"
     >
       <div class="ml-9 flex gap-2 text-white laptop:ml-40 laptop:gap-8">
         <span class="text-center text-xl laptop:text-5xl">―</span>
@@ -89,10 +89,10 @@ import SharedLanguageSwitcher from "@/components/shared/SharedLanguageSwitcher.v
           <h2
             class="align-text-center font-montserrat text-xl font-bold tracking-tight laptop:text-5xl"
           >
-            "{{ $t("landing.movie_3.quote") }}"
+            "{{ $t("landing.movie_lord_of_the_rings.quote") }}"
           </h2>
           <p class="font-helvetica text-base font-bold laptop:text-3xl">
-            {{ $t("landing.movie_3.title") }}
+            {{ $t("landing.movie_lord_of_the_rings.title") }}
           </p>
         </div>
       </div>

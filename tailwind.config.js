@@ -14,9 +14,11 @@ export default {
       backgroundImage: {
         "gradient-radial":
           "linear-gradient(187.16deg, #181623 0.07%, #191725 51.65%, #0D0B14 98.75%)",
-        "movie-1": 'url("@/assets/images/landing_view_1.png")',
-        "movie-2": 'url("@/assets/images/landing_view_2.png")',
-        "movie-3": 'url("@/assets/images/landing_view_3.png")',
+        "movie-interstellar": 'url("@/assets/images/movie_interstellar.png")',
+        "movie-royal-tenenbaums":
+          'url("@/assets/images/movie_royal_tenenbaums.png")',
+        "movie-lord-of-rings":
+          'url("@/assets/images/movie_lord_of_the_rings.png")',
       },
       height: {
         "screen-3/4": "75vh",
