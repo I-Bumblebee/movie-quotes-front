@@ -1,0 +1,20 @@
+{
+  "landing": {
+    "get_started": "Get Started",
+    "heading": "Find any quote in  millions of movie lines",
+    "login": "Log In",
+    "movie_interstellar": {
+      "quote": "You have to leave something  behind to go forward",
+      "title": "Interstellar, 2014"
+    },
+    "movie_royal_tenenbaums": {
+      "quote": "I think we’re just gonna have to be secretly in love with earch other and leave it that",
+      "title": "The Royal Tenenbaums, 2001"
+    },
+    "movie_lord_of_the_rings": {
+      "quote": "I see in your eyes the same fear that would take the  heart of me....",
+      "title": "The Lord of the Rings, 2003"
+    },
+    "register": "Sign Up"
+  }
+}

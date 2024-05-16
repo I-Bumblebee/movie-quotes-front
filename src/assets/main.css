@@ -1,3 +1,124 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+    --geo-unicode-range: U+10A0-10FF;
+    --en-unicode-range: U+0000-109F, U+1100-FFFF;
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/geo/Helvetica Neue LT GEO 25 Ultra Light.ttf');
+    font-weight: 200;
+    unicode-range: var(--geo-unicode-range);
+}
+
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/geo/Helvetica Neue LT GEO 35 Thin.ttf');
+    font-weight: 300;
+    unicode-range: var(--geo-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/geo/Helvetica Neue LT GEO 45 Light.ttf');
+    font-weight: 400;
+    unicode-range: var(--geo-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/geo/Helvetica Neue LT GEO 55 Roman.ttf');
+    font-weight: 500;
+    unicode-range: var(--geo-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/geo/Helvetica Neue LT GEO 65 Medium.ttf');
+    font-weight: 600;
+    unicode-range: var(--geo-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/geo/Helvetica Neue LT GEO 75 Bold.ttf');
+    font-weight: 700;
+    unicode-range: var(--geo-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/geo/Helvetica Neue LT GEO 85 Heavy.ttf');
+    font-weight: 800;
+    unicode-range: var(--geo-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/geo/Helvetica Neue LT GEO 95 Black.ttf');
+    font-weight: 900;
+    unicode-range: var(--geo-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/en/Helvetica Neue LT Std 25 Ultra Light.otf');
+    font-weight: 200;
+    unicode-range: var(--en-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/en/Helvetica Neue LT Std 35 Thin.otf');
+    font-weight: 300;
+    unicode-range: var(--en-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/en/Helvetica Neue LT Std 45 Light.otf');
+    font-weight: 400;
+    unicode-range: var(--en-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/en/Helvetica Neue LT Std 55 Roman.otf');
+    font-weight: 500;
+    unicode-range: var(--en-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/en/Helvetica Neue LT Std 65 Medium.otf');
+    font-weight: 600;
+    unicode-range: var(--en-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/en/Helvetica Neue LT Std 75 Bold.otf');
+    font-weight: 700;
+    unicode-range: var(--en-unicode-range);
+}
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/en/Helvetica Neue LT Std 85 Heavy.otf');
+    font-weight: 800;
+    unicode-range: var(--en-unicode-range);
+}
+
+@font-face {
+    font-family: 'Helvetica Neue';
+    src: url('@/assets/fonts/helvetica/en/Helvetica Neue LT Std 95 Black.otf');
+    font-weight: 900;
+    unicode-range: var(--en-unicode-range);
+}
+
+
+
