@@ -1,4 +1,4 @@
-require('@rushstack/eslint-patch/modern-module-resolution')
+require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
   root: true,
@@ -14,8 +14,8 @@ module.exports = {
     ecmaVersion: 'latest',
     parser: '@typescript-eslint/parser',
   },
-  rules: {
-    // override/add rules settings here, such as:
-    // 'vue/no-unused-vars': 'error'
-  }
-}
+  plugins: ["cypress"],
+  env: {
+    "cypress/globals": true,
+  },
+};
