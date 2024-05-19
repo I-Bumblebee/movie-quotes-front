@@ -1,4 +1,9 @@
 {
+  "header": {
+    "login": "Log In",
+    "logout": "Log Out",
+    "register": "Sign Up"
+  },
   "landing": {
     "get_started": "Get Started",
     "heading": "Find any quote in  millions of movie lines",
@@ -7,14 +12,65 @@
       "quote": "You have to leave something  behind to go forward",
       "title": "Interstellar, 2014"
     },
-    "movie_royal_tenenbaums": {
-      "quote": "I think we’re just gonna have to be secretly in love with earch other and leave it that",
-      "title": "The Royal Tenenbaums, 2001"
-    },
     "movie_lord_of_the_rings": {
       "quote": "I see in your eyes the same fear that would take the  heart of me....",
       "title": "The Lord of the Rings, 2003"
     },
+    "movie_royal_tenenbaums": {
+      "quote": "I think we’re just gonna have to be secretly in love with earch other and leave it that",
+      "title": "The Royal Tenenbaums, 2001"
+    },
     "register": "Sign Up"
+  },
+  "register_modal": {
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email"
+    },
+    "name": {
+      "label": "Name",
+      "placeholder": "Name"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Password"
+    },
+    "password_confirmation": {
+      "label": "Password",
+      "placeholder": "Password"
+    },
+    "create_an_account": "Create an account",
+    "start_your_journey": "Start your journey",
+    "already_have_an_account": "Already have an account?",
+    "sign_up": "Sign Up",
+    "sign_up_with_google": "Sign Up with Google",
+    "login": "Log In",
+    "success_action" : {
+      "heading": "Thank you!",
+      "message": "Please check your email and follow the instructions to\nactivate your account.",
+      "action_name": "Go to my email"
+    }
+  },
+  "validations": {
+    "name": {
+      "required": "Name is required",
+      "min": "Name must be at least 3 characters",
+      "max": "Name must be at most 15 characters",
+      "alpha_num": "Name must be alphanumeric"
+    },
+    "email": {
+      "required": "Email is required",
+      "email": "Email is invalid"
+    },
+    "password": {
+      "required": "Password is required",
+      "min": "Password must be at least 8 characters",
+      "max": "Password must be at most 15 characters",
+      "alpha_num": "Password must be alphanumeric"
+    },
+    "password_confirmation": {
+      "required": "Password confirmation is required",
+      "confirmed": "Passwords do not match"
+    }
   }
 }
