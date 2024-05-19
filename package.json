@@ -16,6 +16,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vee-validate/i18n": "^4.12.8",
+    "@vee-validate/rules": "^4.12.8",
     "js-cookie": "^3.0.5",
     "pinia": "^2.1.7",
     "prettier-plugin-tailwindcss": "^0.5.14",
