@@ -3,13 +3,45 @@ export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      scale: {
+        65: "0.65",
+      },
+      padding: {
+        30: "7.5rem",
+        22: "5.5rem",
+        18: "4.5rem",
+      },
+      borderRadius: {
+        "lg-plus": "0.625rem",
+      },
       maxWidth: {
         66: "16.5rem",
+      },
+      width: {
+        90: "22.5rem",
       },
       colors: {
         almond: "#DDCCAA",
         scarlet: "#E31221",
         firebrick: "#CC0E10",
+        "red-orange": "#B80D0F",
+        cardinal: "#DC3545",
+        "steel-gray": "#222030",
+        indigo: "#0D6EFD",
+        gray: {
+          50: "#f8f9fa",
+          100: "#f1f3f5",
+          200: "#e9ecef",
+          300: "#dee2e6",
+          400: "#ced4da",
+          500: "#adb5bd",
+          600: "#868e96",
+          700: "#495057",
+          800: "#343a40",
+          900: "#212529",
+        },
+        "stale-gray": "#6C757D",
+        seagreen: "#198754",
       },
       backgroundImage: {
         "gradient-radial":
@@ -19,6 +51,9 @@ export default {
           'url("@/assets/images/movie_royal_tenenbaums.png")',
         "movie-lord-of-rings":
           'url("@/assets/images/movie_lord_of_the_rings.png")',
+        "action-modal-bg":
+          "linear-gradient(112.94deg, rgba(239, 239, 239, 0.3) -1.81%, rgba(239, 239, 239, 0.00514528) 102.5%, rgba(1, 1, 1, 0.00260417) 102.51%, rgba(239, 239, 239, 0.05) 102.52%)",
+        "gradient-none": "none",
       },
       height: {
         "screen-3/4": "75vh",
