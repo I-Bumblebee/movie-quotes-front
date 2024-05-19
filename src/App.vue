@@ -1,5 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import ModalRenderer from "@/components/ModalRenderer.vue";
+</script>
 
 <template>
-  <h1 class="absolute text-white">App</h1>
+  <ModalRenderer />
+  <RouterView />
 </template>
