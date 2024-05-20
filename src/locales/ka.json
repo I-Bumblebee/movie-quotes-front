@@ -51,6 +51,29 @@
       "action_name": "გადადი მეილზე"
     }
   },
+  "login_modal": {
+    "log_in_to_your_account": "პროფილში შესვლა",
+    "welcome_back": "გთხოვთ შეიყვანოთ თქვენი დეტალები.",
+    "email": {
+      "label": "ელ-ფოსტა",
+      "placeholder": "შეიყვანე ელ-ფოსტა"
+    },
+    "password": {
+      "label": "პაროლი",
+      "placeholder": "პაროლი"
+    },
+    "remember_me": "დამახსოვრება",
+    "forgot_password": "დამავიწყდა",
+    "sign_in": "შესვლა",
+    "login_with_google": "შესვლა Google-ით",
+    "sign_up": "დარეგისტრირება",
+    "already_have_an_account": "უკვე დარეგისტრირებული ხარ?",
+    "success_action": {
+      "heading": "დაბრუნებას გილოცავ!",
+      "message": "თქვენ წარმატებით შეხვედიტ თქვენს პროფილში.",
+      "action_name": "ციტატების ნახვა"
+    }
+  },
   "validations": {
     "name": {
       "required": "სახელი სავალდებულოა",
@@ -72,5 +95,15 @@
       "required": "პაროლის დადასტურება სავალდებულოა",
       "confirm": "პაროლი და პაროლის დადასტურება არ ემთხვევა"
     }
+  },
+  "route_not_found": {
+    "heading": "უპსს...",
+    "message": "გვერდი ვერ მოიძებნა",
+    "action_name": "მთავარი გვერდი"
+  },
+  "unauthorized": {
+    "heading": "იუ შელ ნოთ პასს!",
+    "message": "თქვენ არ გაქვთ წვდომა ამ გვერდზე",
+    "action_name": "მთავარი გვერდი"
   }
 }
