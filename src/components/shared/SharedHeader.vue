@@ -36,6 +36,7 @@ const modal = useModal();
       />
       <button
         v-else
+        @click="user.logout"
         class="cursor-pointer rounded border border-white px-5 pb-1 pt-1.5 text-base text-white hover:bg-white hover:bg-opacity-5 laptop:pt-2"
       >
         {{ $t("header.logout") }}

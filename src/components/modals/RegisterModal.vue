@@ -38,7 +38,7 @@ const onSubmit = handleSubmit(async (values) => {
     values.password_confirmation,
   )
     .then(() => {
-      onSuccess();
+      onSuccess(values.email);
     })
     .catch(
       ({
@@ -63,13 +63,16 @@ const loginWithGoogle = () => {
   });
 };
 
-const onSuccess = () => {
+const onSuccess = (email: string) => {
   modal.openActionModal("BaseDialogModal", {
     iconName: "IconsSendCheck",
     heading: t("register_modal.success_action.heading"),
     message: t("register_modal.success_action.message"),
     actionName: t("register_modal.success_action.action_name"),
-    action: () => modal.close(),
+    action: () => {
+      const emailVendor = email.split("@")[1];
+      window.location.href = `https://www.${emailVendor}`;
+    },
   });
 };
 </script>
