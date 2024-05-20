@@ -3,6 +3,7 @@ import { ref } from "vue";
 import IconsCaret from "@/components/icons/IconsCaret.vue";
 import Cookies from "js-cookie";
 import { useI18n } from "vue-i18n";
+import { setLocale } from "@vee-validate/i18n";
 
 const languages: Record<string, string> = {
   en: "Eng",
@@ -26,6 +27,7 @@ const selectLanguage = (lang: string) => {
 
   selectedLanguage.value = lang as keyof typeof availableLocales.values;
   locale.value = lang as keyof typeof availableLocales.values;
+  setLocale(lang);
 };
 </script>
 
@@ -34,7 +36,7 @@ const selectLanguage = (lang: string) => {
     <div @click="toggleDropdown" class="w-full cursor-pointer">
       {{ languages[selectedLanguage] }}
       <IconsCaret
-        class="absolute right-1 top-1 transition duration-300"
+        class="absolute right-1 top-0.5 transition duration-300"
         :class="isDropdownOpen ? '-rotate-90 transform' : 'rotate-0 transform'"
       />
     </div>
