@@ -14,7 +14,7 @@ import BaseRedButton from "@/components/base/BaseRedButton.vue";
         {{ $t("unauthorized.heading") }}
       </h1>
       <p
-        class="max-w-72 text-center text-base font-semibold text-white laptop:text-2xl"
+        class="max-w-72 text-center text-base font-semibold text-white laptop:max-w-none laptop:text-2xl"
       >
         {{ $t("unauthorized.message") }}
       </p>

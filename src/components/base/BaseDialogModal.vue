@@ -19,7 +19,9 @@ const icon = defineAsyncComponent(
       class="relative mb-40 box-content flex w-10/12 flex-col items-center gap-7 rounded-lg-plus py-18 font-helvetica laptop:w-90 laptop:bg-steel-gray laptop:bg-gradient-none laptop:px-22"
     >
       <component :is="icon" />
-      <h1 class="-mt-1 text-2xl font-semibold text-white laptop:text-3xl">
+      <h1
+        class="-mt-1 text-center text-2xl font-semibold text-white laptop:text-3xl"
+      >
         {{ props.heading }}
       </h1>
       <p
@@ -30,7 +32,7 @@ const icon = defineAsyncComponent(
       <BaseRedButton
         @click.stop.capture="props.action"
         :text="props.actionName"
-        class="mb-4 w-2/4 border font-medium laptop:mb-0 laptop:mt-3 laptop:w-full"
+        class="mb-4 w-2/4 whitespace-nowrap border font-medium laptop:mb-0 laptop:mt-3 laptop:w-full"
       />
       <div
         class="absolute inset-0 -z-10 rotate-180 rounded-lg-plus bg-action-modal-bg opacity-30"

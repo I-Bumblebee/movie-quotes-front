@@ -6,7 +6,10 @@ import {
 import LandingView from "@/views/LandingView.vue";
 import RouteNotFoundView from "@/views/RouteNotFoundView.vue";
 import UnauthorizedErrorView from "@/views/UnauthorizedErrorView.vue";
+import VerifyEmailCallbackView from "@/views/VerifyEmailCallbackView.vue";
 import { defineComponent } from "vue";
+import OAuthGoogleCallbackView from "@/views/OAuthGoogleCallbackView.vue";
+import ForgotPasswordCallbackView from "@/views/ForgotPasswordCallbackView.vue";
 
 const PlaceHolderView = defineComponent({});
 
@@ -20,6 +23,21 @@ const routes: Array<RouteRecordRaw> = [
     path: "/quotes",
     name: "Quotes",
     component: PlaceHolderView,
+  },
+  {
+    path: "/verify-email",
+    name: "VerifyEmail",
+    component: VerifyEmailCallbackView,
+  },
+  {
+    path: "/oauth/google/callback",
+    name: "GoogleCallback",
+    component: OAuthGoogleCallbackView,
+  },
+  {
+    path: "/reset-password",
+    name: "ForgotPasswordCallback",
+    component: ForgotPasswordCallbackView,
   },
   {
     path: "/unauthorized",
