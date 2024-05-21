@@ -74,6 +74,70 @@
       "action_name": "ციტატების ნახვა"
     }
   },
+  "forgot_password_modal": {
+    "forgot_password": "დაგავიწყდა პაროლი?",
+    "forgot_password_message": "შეიყვანეთ ელფოსტა და ჩვენ გამოგიგზავნით ელფოსტაზე ინსტრუქციებს პაროლის აღსადგენად",
+    "email": {
+      "label": "ელფოსტა",
+      "placeholder": "შეიყვანეთ თქვენი ელფოსტა"
+    },
+    "send_instructions": "გაგზავნეთ ინსტრუქციები",
+    "back_to_login": "უკან შესვლაზე",
+    "success_action" : {
+      "heading": "შეამოწმეთ თქვენი ელფოსტა",
+      "message": "ჩვენ გამოგიგზავნეთ პაროლის აღდგენის ინსტრუქციები თქვენს ელფოსტაზე",
+      "action_name": "გახსესნი ელფოსტა",
+      "secondary_action_name": "მოგვიანებით ვნახავ"
+    }
+  },
+  "reset_password_modal": {
+    "create_new_password": "შექმენით ახალი პაროლი",
+    "reset_password_message": "თქვენი ახალი პაროლი უნდა იყოს განსხვავებული წინად გამოყენებული პაროლებისგან",
+    "password": {
+      "label": "პაროლი",
+      "placeholder": "მინ. 8 და მაქს. 15 პატარა ასოები"
+    },
+    "password_confirmation": {
+      "label": "დაადასტურეთ პაროლი",
+      "placeholder": "დაადასტურეთ პაროლი"
+    },
+    "reset_password": "პაროლის აღდგენა",
+    "back_to_login": "უკან შესვლაზე",
+    "success_action" : {
+      "heading": "წარმატება!",
+      "message": "თქვენი პაროლი წარმატებით შეიცვალა",
+      "action_name": "შესვლა"
+    },
+    "fail_action" : {
+      "heading": "ბმული ვადაგასულია!",
+      "message": "შესასვლელი ბმული ვადაგასულია, რადგან არ გისარგებლიათ მასით",
+      "action_name": "მოითხოვეთ სხვა ბმული"
+    }
+  },
+  "verify_email_callback": {
+    "success": {
+      "heading": "გმადლობთ!",
+      "message": "თქვენი ელფოსტა წარმატებით დადასტურდა",
+      "action_name": "შესვლა"
+    },
+    "fail": {
+      "heading": "უპსს!",
+      "message": "ჩვენ ვერ დავადასტურებთ თქვენს ელფოსტას",
+      "action_name": "მთავარი"
+    }
+  },
+  "handle_google_callback": {
+    "success": {
+      "heading": "კეთილი იყოს თქვენი მობრძანება!",
+      "message": "თქვენ შესული ხართ სისტემაში",
+      "action_name": "შეხედეთ ციტატებს"
+    },
+    "fail": {
+      "heading": "უი!",
+      "message": "ჩვენ ვერ შეგიყვანთ სისტემაში",
+      "action_name": "მთავარი გვერდი"
+    }
+  },
   "validations": {
     "name": {
       "required": "სახელი სავალდებულოა",

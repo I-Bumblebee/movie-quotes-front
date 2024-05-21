@@ -96,6 +96,70 @@
       "confirmed": "Passwords do not match"
     }
   },
+  "forgot_password_modal": {
+    "forgot_password": "Forgot password?",
+    "forgot_password_message": "Enter the email and we’ll send an email with instructions to reset your password",
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email"
+    },
+    "send_instructions": "Send instructions",
+    "back_to_login": "Back to login",
+    "success_action" : {
+      "heading": "Check your email",
+      "message": "We have sent a password recover instructions to your email",
+      "action_name": "Go to my email",
+      "secondary_action_name": "Skip, I’ll confirm later"
+    }
+  },
+  "reset_password_modal": {
+    "create_new_password": "Create new password",
+    "reset_password_message": "Your new password must be different from previous used passwords",
+    "password": {
+      "label": "Password",
+      "placeholder": "At least 8 & max.15 lower case characters"
+    },
+    "password_confirmation": {
+      "label": "Confirm password",
+      "placeholder": "Confirm password"
+    },
+    "reset_password": "Reset password",
+    "back_to_login": "Back to login",
+    "success_action" : {
+      "heading": "Success!",
+      "message": "Your Password changed successfully",
+      "action_name": "Log in"
+    },
+    "fail_action" : {
+      "heading": "Link expired!",
+      "message": "Login link has expired, because you haven’t used it",
+      "action_name": "Request another link"
+    }
+  },
+  "verify_email_callback": {
+    "success": {
+      "heading": "Thank you!",
+      "message": "Your email has been verified successfully",
+      "action_name": "Log in"
+    },
+    "fail": {
+      "heading": "Whoops!",
+      "message": "We can't verify your email",
+      "action_name": "Home"
+    }
+  },
+  "handle_google_callback": {
+    "success": {
+      "heading": "Welcome!",
+      "message": "You are now logged in",
+      "action_name": "View Quotes"
+    },
+    "fail": {
+      "heading": "Whoops!",
+      "message": "We can't log you in",
+      "action_name": "Home"
+    }
+  },
   "route_not_found": {
     "heading": "Whoops!",
     "message": "We can't see the page you are looking for",
