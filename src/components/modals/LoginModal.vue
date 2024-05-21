@@ -74,7 +74,7 @@ const onSuccess = () => {
 </script>
 
 <template>
-  <LayoutModal>
+  <LayoutModal closable>
     <LoadingWheelModal v-show="loading" />
     <div
       v-show="!loading"
@@ -111,7 +111,10 @@ const onSuccess = () => {
             <input v-model="remember" type="checkbox" class="-mt-1.5" />
             {{ $t("login_modal.remember_me") }}
           </label>
-          <button class="text-indigo underline">
+          <button
+            @click.prevent.stop="modal.open('ForgotPasswordModal')"
+            class="text-indigo underline"
+          >
             {{ $t("login_modal.forgot_password") }}
           </button>
         </div>
@@ -134,7 +137,7 @@ const onSuccess = () => {
           @click.prevent.stop="modal.open('RegisterModal')"
           class="cursor-pointer font-medium text-indigo underline"
         >
-          {{ $t("login_modal.sign_in") }}
+          {{ $t("login_modal.sign_up") }}
         </button>
       </p>
     </div>

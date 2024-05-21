@@ -78,7 +78,7 @@ const onSuccess = (email: string) => {
 </script>
 
 <template>
-  <LayoutModal>
+  <LayoutModal closable>
     <LoadingWheelModal v-show="loading" />
     <div
       v-show="!loading"
