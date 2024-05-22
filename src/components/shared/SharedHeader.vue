@@ -10,7 +10,7 @@ const modal = useModal();
 
 <template>
   <header
-    class="box-border flex w-full items-center justify-between px-4 py-6 font-helvetica laptop:px-16"
+    class="box-border flex w-full items-center justify-between px-4 py-6 font-helvetica laptop:px-18"
   >
     <RouterLink
       :to="{ name: 'Quotes' }"
@@ -24,7 +24,7 @@ const modal = useModal();
       <button
         v-if="!user.isAuthenticated"
         @click="modal.open('LoginModal')"
-        class="cursor-pointer rounded border border-white px-4 pb-1 pt-1.5 hover:bg-white hover:bg-opacity-5 laptop:px-6 laptop:pt-2"
+        class="cursor-pointer rounded border border-white px-4 py-1.5 hover:bg-white hover:bg-opacity-5 laptop:px-6"
       >
         {{ $t("header.login") }}
       </button>
@@ -37,7 +37,7 @@ const modal = useModal();
       <button
         v-else
         @click="user.logout"
-        class="cursor-pointer rounded border border-white px-5 pb-1 pt-1.5 text-base text-white hover:bg-white hover:bg-opacity-5 laptop:pt-2"
+        class="cursor-pointer rounded border border-white px-5 py-1.5 text-base text-white hover:bg-white hover:bg-opacity-5"
       >
         {{ $t("header.logout") }}
       </button>

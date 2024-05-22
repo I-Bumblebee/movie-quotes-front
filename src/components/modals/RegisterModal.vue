@@ -131,7 +131,7 @@ const onSuccess = (email: string) => {
       </form>
       <button
         @click="loginWithGoogle"
-        class="mt-4 w-90 cursor-pointer rounded border border-gray-400 pb-1 pt-2 font-medium text-white hover:bg-white hover:bg-opacity-5"
+        class="mt-4 w-90 cursor-pointer rounded border border-gray-400 py-1.5 font-medium text-white hover:bg-white hover:bg-opacity-5"
       >
         <IconsGoogle class="mb-1 mr-1.5 inline" />
         {{ $t("register_modal.sign_up_with_google") }}

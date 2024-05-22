@@ -8,7 +8,7 @@ type PropTypes = {
   name: string;
   label: string;
   placeholder: string;
-  required: boolean;
+  required?: boolean;
 };
 
 const props = defineProps<PropTypes>();

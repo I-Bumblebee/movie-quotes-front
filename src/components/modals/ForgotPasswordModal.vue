@@ -103,7 +103,7 @@ const onSuccess = (email: string) => {
         class="mt-9 inline-flex select-none items-center gap-3 text-center font-medium text-stale-gray"
       >
         <IconsArrowIcon />
-        <span class="-mb-1">
+        <span>
           {{ $t("forgot_password_modal.back_to_login") }}
         </span>
       </button>

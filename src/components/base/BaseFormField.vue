@@ -10,29 +10,36 @@ type PropTypes = {
   label: string;
   type: string;
   placeholder: string;
-  required: boolean;
+  required?: boolean;
+  class?: string;
+  disabled?: boolean;
 };
 
-const props = defineProps<PropTypes>();
+const props = withDefaults(defineProps<PropTypes>(), {
+  required: false,
+  disabled: false,
+});
 
-const isFocused = ref(false);
+const isDeleteButtonVisible = ref(false);
+
 const { value, meta, errors, resetField } = useField(props.name, undefined, {
   bails: false,
 });
 
 const valid = computed(() => meta.dirty && meta.valid);
 const invalid = computed(() => meta.dirty && !meta.valid);
+
+const hideDeleteIcon = () => {
+  isDeleteButtonVisible.value = false;
+};
 </script>
 
 <template>
-  <div
-    v-click-outside="() => (isFocused = false)"
-    @click.stop="isFocused = true"
-  >
+  <div v-click-outside="() => hideDeleteIcon()" class="w-full">
     <label
-      class="group relative flex w-full flex-col gap-1.5 font-helvetica text-base font-medium leading-4 text-gray-700"
+      class="relative flex w-full flex-col gap-1.5 font-helvetica text-base font-medium leading-4 text-gray-700"
     >
-      <span class="-mb-1 font-helvetica text-base text-white">
+      <span class="font-helvetica text-base text-white">
         {{ props.label }}
         <span
           v-if="props.required"
@@ -42,38 +49,45 @@ const invalid = computed(() => meta.dirty && !meta.valid);
           *
         </span>
       </span>
-      <input
-        v-model="value"
-        :type="props.type"
-        :name="props.name"
-        :placeholder="props.placeholder"
-        class="w-full rounded border bg-gray-400 p-4 px-3 pb-1 pt-2 text-base text-gray-900 placeholder-stale-gray outline-none ring-offset-0"
-        :class="[
-          valid && 'border-seagreen',
-          invalid && 'border-cardinal',
-          !(valid || invalid) &&
-            'border-gray-400 focus:ring-4 focus:ring-indigo focus:ring-opacity-20',
-        ]"
-      />
-      <span class="absolute right-2.5 top-9 flex gap-2">
-        <slot />
-        <IconsX
-          @click="resetField"
-          v-if="!!value && isFocused"
-          class="mt-0.5"
+      <span class="relative">
+        <input
+          v-model="value"
+          :disabled="props.disabled"
+          :type="props.type"
+          :name="props.name"
+          :placeholder="props.placeholder"
+          class="w-full rounded border bg-gray-400 px-3.5 py-1.5 text-base text-gray-900 placeholder-stale-gray outline-none"
+          :class="[
+            props.class,
+            valid && 'border-seagreen',
+            invalid && 'border-cardinal',
+            !(valid || invalid) &&
+              'border-gray-400 focus:ring-4 focus:ring-indigo focus:ring-opacity-20',
+          ]"
+          @focus="isDeleteButtonVisible = true"
         />
-        <IconsCheckMark v-else-if="valid" />
-        <IconsInvalidAlert v-else-if="invalid" />
+        <span
+          class="absolute right-5 top-1/2 z-50 flex -translate-y-1/2 translate-x-1/2 gap-2"
+        >
+          <slot>
+            <IconsX
+              @click.stop="resetField"
+              v-if="!!value && isDeleteButtonVisible"
+            />
+            <IconsCheckMark v-else-if="valid" />
+            <IconsInvalidAlert v-else-if="invalid" />
+          </slot>
+        </span>
       </span>
     </label>
-    <div v-if="invalid" class="mt-1.5 flex flex-col gap-1">
-      <p
+    <ul v-if="invalid" class="m-0 mt-1.5 flex list-none flex-col gap-1 p-0">
+      <li
         v-for="(error, index) in errors"
         :key="index"
         class="text-sm capitalize text-cardinal"
       >
         {{ error }}
-      </p>
-    </div>
+      </li>
+    </ul>
   </div>
 </template>

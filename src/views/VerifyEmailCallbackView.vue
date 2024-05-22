@@ -48,7 +48,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <LayoutModal :opacity="100">
+  <LayoutModal class="opacity-100">
     <LoadingWheelModal />
   </LayoutModal>
 </template>

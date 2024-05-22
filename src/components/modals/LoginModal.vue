@@ -91,7 +91,7 @@ const onSuccess = () => {
       </div>
       <form
         @submit="onSubmit"
-        class="mx-auto mt-6 box-content flex w-90 flex-col gap-5 overflow-y-scroll px-1 text-black"
+        class="no-scrollbar mx-auto mt-6 box-content flex w-90 flex-col gap-5 overflow-y-scroll px-1 text-black"
       >
         <BaseFormField
           name="email"
@@ -108,7 +108,7 @@ const onSuccess = () => {
         />
         <div class="flex h-3.5 items-center justify-between text-white">
           <label class="flex items-center gap-2 font-medium">
-            <input v-model="remember" type="checkbox" class="-mt-1.5" />
+            <input v-model="remember" type="checkbox" />
             {{ $t("login_modal.remember_me") }}
           </label>
           <button
@@ -126,7 +126,7 @@ const onSuccess = () => {
       </form>
       <button
         @click="loginWithGoogle"
-        class="mt-4 w-90 cursor-pointer rounded border border-gray-400 pb-1 pt-2 font-medium text-white hover:bg-white hover:bg-opacity-5"
+        class="mt-4 w-90 cursor-pointer rounded border border-gray-400 py-1.5 font-medium text-white hover:bg-white hover:bg-opacity-5"
       >
         <IconsGoogle class="mb-1 mr-1.5 inline" />
         {{ $t("login_modal.login_with_google") }}

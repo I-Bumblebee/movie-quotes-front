@@ -20,7 +20,7 @@ const modal = useModal();
       <BaseRedButton
         @click="modal.open('RegisterModal')"
         :text="$t('landing.get_started')"
-        class="border pb-1.5 pt-3 laptop:px-4 laptop:text-xl"
+        class="py-2.5 laptop:px-4 laptop:text-xl"
       />
     </div>
     <div

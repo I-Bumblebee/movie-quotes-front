@@ -3,7 +3,7 @@ import IconsArrowIcon from "@/components/icons/IconsArrowIcon.vue";
 import useModal from "@/stores/modalController";
 
 type PropTypes = {
-  opacity?: number;
+  class?: string;
   closable?: boolean;
 };
 const props = defineProps<PropTypes>();
@@ -13,8 +13,8 @@ const modal = useModal();
 <template>
   <div class="fixed inset-0 h-full backdrop-blur-sm">
     <div
-      class="h-full w-full bg-black bg-gradient-radial"
-      :class="`laptop:opacity-${props.opacity ?? 50}`"
+      class="h-full w-full bg-black bg-gradient-radial laptop:opacity-50"
+      :class="props.class"
     ></div>
   </div>
   <div class="fixed inset-0">
