@@ -2,7 +2,7 @@
 
 <template>
   <div
-    class="mb-44 rounded-lg-plus px-30 py-14 font-helvetica laptop:h-auto laptop:bg-steel-gray"
+    class="mb-44 flex items-center justify-center rounded-lg-plus px-30 py-14 font-helvetica laptop:h-auto laptop:bg-steel-gray"
   >
     <div class="loader"></div>
   </div>

@@ -36,7 +36,7 @@ const selectLanguage = (lang: string) => {
     <div @click="toggleDropdown" class="w-full cursor-pointer">
       {{ languages[selectedLanguage] }}
       <IconsCaret
-        class="absolute right-1 top-0.5 transition duration-300"
+        class="absolute right-1 top-1 transition duration-300"
         :class="isDropdownOpen ? '-rotate-90 transform' : 'rotate-0 transform'"
       />
     </div>
