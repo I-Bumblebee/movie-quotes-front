@@ -160,6 +160,36 @@
       "action_name": "Home"
     }
   },
+  "profile_view": {
+    "my_profile": "My Profile",
+    "upload_new_photo": "Upload new photo",
+    "username": "Username",
+    "new_username": "New username",
+    "enter_new_username": "Enter new username",
+    "email": "Email",
+    "password": "Password",
+    "edit": "Edit",
+    "new_password": "New password",
+    "enter_new_password": "Enter new password",
+    "confirm_new_password": "Confirm new password",
+    "password_should_contain": "password_should_contain",
+    "eight_or_more_characters": "8 or more characters",
+    "fifteen_or_less_characters": "15 or less characters",
+    "cancel": "Cancel",
+    "save": "Save",
+    "save_changes": "Save changes",
+    "toast_changes_updated_successfully": "Changes updated successfully"
+  },
+  "confirm_user_update_modal": {
+    "text":  "Are you sure to make changes ?",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "sidebar": {
+    "edit_your_profile": "Edit your profile",
+    "news_feed": "News feed",
+    "list_of_movies": "List of movies"
+  },
   "route_not_found": {
     "heading": "Whoops!",
     "message": "We can't see the page you are looking for",
