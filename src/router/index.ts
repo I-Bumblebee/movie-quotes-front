@@ -10,6 +10,7 @@ import VerifyEmailCallbackView from "@/views/VerifyEmailCallbackView.vue";
 import { defineComponent } from "vue";
 import OAuthGoogleCallbackView from "@/views/OAuthGoogleCallbackView.vue";
 import ForgotPasswordCallbackView from "@/views/ForgotPasswordCallbackView.vue";
+import ProfileView from "@/views/ProfileView.vue";
 
 const PlaceHolderView = defineComponent({});
 
@@ -38,6 +39,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/reset-password",
     name: "ForgotPasswordCallback",
     component: ForgotPasswordCallbackView,
+  },
+  {
+    path: "/profile",
+    name: "Profile",
+    component: ProfileView,
   },
   {
     path: "/unauthorized",

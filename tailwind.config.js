@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      minWidth: {
+        "xl-plus": "37rem",
+      },
       fontSize: {
         "3xl-plus": ["2rem", "2.5rem"],
       },
@@ -20,8 +23,13 @@ export default {
       maxWidth: {
         66: "16.5rem",
       },
+      maxHeight: {
+        93: "23.25rem",
+      },
       width: {
         90: "22.5rem",
+        15: "3.75rem",
+        47: "11.75rem",
       },
       colors: {
         almond: "#DDCCAA",
@@ -45,6 +53,9 @@ export default {
         },
         "stale-gray": "#6C757D",
         seagreen: "#198754",
+        cinder: "#11101A",
+        beige: "#D1E7DD",
+        teal: "#0F5132",
       },
       backgroundImage: {
         "gradient-radial":
@@ -60,6 +71,8 @@ export default {
       },
       height: {
         "screen-3/4": "75vh",
+        15: "3.75rem",
+        47: "11.75rem",
       },
       boxShadow: {
         overlay: "inset 0 0 200px 0 rgba(0, 0, 0, 0.75)",

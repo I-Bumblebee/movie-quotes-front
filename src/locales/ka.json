@@ -138,6 +138,36 @@
       "action_name": "მთავარი გვერდი"
     }
   },
+  "profile_view": {
+    "my_profile": "პროფილი",
+    "upload_new_photo": "ატვირთე ფოტო",
+    "username": "სახელი",
+    "new_username": "ახალი სახელი",
+    "enter_new_username": "შეიყვანეთ ახალი სახელი",
+    "email": "ელფოსტის მისამართი",
+    "password": "პაროლი",
+    "edit": "რედაქტირება",
+    "new_password": "ახალი პაროლი",
+    "enter_new_password": "შეიყვანეთ ახალი პაროლი",
+    "confirm_new_password": "დაადასტურეთ ახალი პაროლი",
+    "password_should_contain": "პაროლი უნდა შეიცავდეს",
+    "eight_or_more_characters": "8 ან მეტი სიმბოლოს",
+    "fifteen_or_less_characters": "15 ან ნაკლები სიმბოლოს",
+    "cancel": "გაუქმება",
+    "save": "შენახვა",
+    "save_changes": "ცვლილებების შენახვა",
+    "toast_changes_updated_successfully": "ცვლილებები წარმატებით შეინახა"
+  },
+  "confirm_user_update_modal": {
+    "text":  "დარწმუნებული ხართ, რომ გინდათ ცვლილებების შენახვა?",
+    "cancel": "გაუქმება",
+    "confirm": "დადასტურება"
+  },
+  "sidebar": {
+    "edit_your_profile": "პროფილის რედაქტირება",
+    "news_feed": "ნიუს ფიდი",
+    "list_of_movies": "ჩემი ფილმები"
+  },
   "validations": {
     "name": {
       "required": "სახელი სავალდებულოა",
