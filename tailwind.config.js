@@ -25,11 +25,13 @@ export default {
       },
       maxHeight: {
         93: "23.25rem",
+        md: "28rem",
       },
       width: {
         90: "22.5rem",
         15: "3.75rem",
         47: "11.75rem",
+        "2xl": "42rem",
       },
       colors: {
         almond: "#DDCCAA",
@@ -56,6 +58,9 @@ export default {
         cinder: "#11101A",
         beige: "#D1E7DD",
         teal: "#0F5132",
+        dimgray: "#54535A",
+        bastille: "#24222F",
+        blueviolet: "#9747FF",
       },
       backgroundImage: {
         "gradient-radial":
