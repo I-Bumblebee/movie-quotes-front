@@ -16,7 +16,7 @@ const props = defineProps<{
 watch(inputText, () => {
   const input = inputText.value.trim();
   if (timer.value) {
-    clearTimeout(timer.value as number);
+    clearTimeout(Number(timer.value));
   }
   timer.value = setTimeout(() => {
     if (input.startsWith("@")) {
