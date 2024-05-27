@@ -23,7 +23,7 @@ const emit = defineEmits<{
       <p class="text-teal">{{ props.message }}</p>
       <IconsCloseToast
         @click="emit('close')"
-        class="ml-auto justify-self-end opacity-50"
+        class="ml-auto justify-self-end fill-black opacity-50"
       />
     </div>
   </div>

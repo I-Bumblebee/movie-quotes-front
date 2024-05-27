@@ -22,7 +22,7 @@ const { movie } = defineProps<{
   >
     <img
       :src="movie.poster"
-      class="max-h-93 rounded-xl object-cover object-center"
+      class="h-full max-h-93 rounded-xl object-cover object-center"
       alt="movie poster"
     />
     <p class="text-2xl font-medium">

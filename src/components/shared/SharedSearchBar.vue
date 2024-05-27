@@ -7,7 +7,7 @@ const active = ref(false);
 const inputRef = ref<HTMLInputElement | null>(null);
 const inputText = ref("");
 const router = useRouter();
-const timer = ref<number | null>(null);
+const timer = ref<NodeJS.Timeout | null>(null);
 
 const props = defineProps<{
   page?: "movieList" | "quoteList";
@@ -15,7 +15,7 @@ const props = defineProps<{
 
 watch(inputText, () => {
   const input = inputText.value.trim();
-  if (timer.value){
+  if (timer.value) {
     clearTimeout(timer.value as number);
   }
   timer.value = setTimeout(() => {
@@ -26,7 +26,7 @@ watch(inputText, () => {
     } else {
       router.push({ query: { "filter[title]": "" } });
     }
-  }, 550) as unknown as number;
+  }, 550);
 });
 
 const focusInput = () => {
