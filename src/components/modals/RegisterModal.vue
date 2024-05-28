@@ -64,7 +64,7 @@ const loginWithGoogle = () => {
 };
 
 const onSuccess = (email: string) => {
-  modal.openActionModal("BaseDialogModal", {
+  modal.openWithProps("InteractiveDialogModal", {
     iconName: "IconsSendCheck",
     heading: t("register_modal.success_action.heading"),
     message: t("register_modal.success_action.message"),
@@ -95,7 +95,7 @@ const onSuccess = (email: string) => {
       </div>
       <form
         @submit="onSubmit"
-        class="mx-auto mt-6 box-content flex w-90 flex-col gap-5 overflow-y-scroll px-1 text-black"
+        class="mx-auto mt-6 box-content flex w-90 flex-col gap-5 overflow-y-visible px-1 text-black"
       >
         <BaseFormField
           name="name"

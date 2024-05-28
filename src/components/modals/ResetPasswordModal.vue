@@ -50,7 +50,7 @@ const onSubmit = handleSubmit(async (values) => {
 });
 
 const onSuccess = () => {
-  modal.openActionModal("BaseDialogModal", {
+  modal.openWithProps("InteractiveDialogModal", {
     iconName: "IconsCircleCheckMark",
     heading: t("reset_password_modal.success_action.heading"),
     message: t("reset_password_modal.success_action.message"),
@@ -59,7 +59,7 @@ const onSuccess = () => {
   });
 };
 const onFail = () => {
-  modal.openActionModal("BaseDialogModal", {
+  modal.openWithProps("InteractiveDialogModal", {
     iconName: "IconsExpiredToken",
     heading: t("reset_password_modal.fail_action.heading"),
     message: t("reset_password_modal.fail_action.message"),
@@ -83,7 +83,7 @@ onMounted(() => {
       class="flex h-screen w-full flex-col items-center rounded-lg-plus pt-24 font-helvetica laptop:h-auto laptop:w-auto laptop:bg-steel-gray laptop:px-28 laptop:pb-8 laptop:pt-14"
     >
       <div class="inline-block text-center">
-        <h1 class="text-3xl-plus inline-block font-semibold">
+        <h1 class="inline-block text-3xl-plus font-semibold">
           {{ $t("reset_password_modal.create_new_password") }}
         </h1>
         <p
@@ -95,7 +95,7 @@ onMounted(() => {
 
       <form
         @submit="onSubmit"
-        class="mx-auto mt-7 box-content flex w-90 flex-col gap-6 overflow-y-scroll px-1 text-black"
+        class="mx-auto mt-7 box-content flex w-90 flex-col gap-6 overflow-y-visible px-1 text-black"
       >
         <BasePasswordField
           name="password"

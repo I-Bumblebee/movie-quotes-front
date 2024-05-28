@@ -24,7 +24,7 @@ onMounted(() => {
 
   verifyEmail(user, hash, expires, signature)
     .then(() => {
-      modal.openActionModal("BaseDialogModal", {
+      modal.openWithProps("BaseDialogModal", {
         iconName: "IconsCircleCheckMark",
         heading: t("verify_email_callback.success.heading"),
         message: t("verify_email_callback.success.message"),
@@ -33,7 +33,7 @@ onMounted(() => {
       });
     })
     .catch(() => {
-      modal.openActionModal("BaseDialogModal", {
+      modal.openWithProps("BaseDialogModal", {
         iconName: "IconsExpiredToken",
         heading: t("verify_email_callback.fail.heading"),
         message: t("verify_email_callback.fail.message"),

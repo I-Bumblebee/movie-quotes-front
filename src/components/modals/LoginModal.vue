@@ -60,7 +60,7 @@ const loginWithGoogle = () => {
 };
 
 const onSuccess = () => {
-  modal.openActionModal("BaseDialogModal", {
+  modal.openWithProps("InteractiveDialogModal", {
     iconName: "IconsCircleCheckMark",
     heading: t("login_modal.success_action.heading"),
     message: t("login_modal.success_action.message"),
@@ -91,7 +91,7 @@ const onSuccess = () => {
       </div>
       <form
         @submit="onSubmit"
-        class="no-scrollbar mx-auto mt-6 box-content flex w-90 flex-col gap-5 overflow-y-scroll px-1 text-black"
+        class="mx-auto mt-6 box-content flex w-90 flex-col gap-5 overflow-y-visible px-1 text-black"
       >
         <BaseFormField
           name="email"
@@ -112,6 +112,7 @@ const onSuccess = () => {
             {{ $t("login_modal.remember_me") }}
           </label>
           <button
+            type="button"
             @click.prevent.stop="modal.open('ForgotPasswordModal')"
             class="text-indigo underline"
           >

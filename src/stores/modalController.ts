@@ -1,7 +1,7 @@
 import { markRaw } from "vue";
 import { defineStore } from "pinia";
 
-export type ActionPropTypes = {
+export type InteractiveDialogModal = {
   iconName: string;
   heading: string;
   message: string;
@@ -11,10 +11,16 @@ export type ActionPropTypes = {
   secondaryAction?: () => void;
 };
 
+export type EditMovieModalProps = {
+  movieId: string;
+};
+
+type PropTypes = InteractiveDialogModal | EditMovieModalProps;
+
 type Modal = {
   isOpen: boolean;
   view: object;
-  props?: ActionPropTypes;
+  props?: PropTypes;
 };
 
 export const useModal = defineStore("modal", {
@@ -28,10 +34,10 @@ export const useModal = defineStore("modal", {
       const view = await import(`@/components/modals/${viewPath}.vue`);
       this.view = markRaw(view.default);
     },
-    async openActionModal(viewPath: string, props: ActionPropTypes) {
+    async openWithProps(viewPath: string, props: PropTypes) {
       this.isOpen = true;
       this.props = props;
-      const view = await import(`@/components/base/${viewPath}.vue`);
+      const view = await import(`@/components/modals/${viewPath}.vue`);
       this.view = markRaw(view.default);
     },
     close() {
