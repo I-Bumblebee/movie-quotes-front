@@ -7,7 +7,7 @@ const store = useUserAuthStore();
 </script>
 
 <template>
-  <div class="flex flex-col gap-10 whitespace-nowrap">
+  <div class="flex flex-col gap-10 whitespace-nowrap fill-white">
     <div class="flex items-center gap-6">
       <img
         :src="store.user?.image"
@@ -32,20 +32,17 @@ const store = useUserAuthStore();
     <RouterLink
       :to="{ name: 'Quotes' }"
       class="flex items-center gap-10 pl-2.5 text-2xl"
+      active-class="fill-red-500"
     >
-      <IconsHouse
-        :class="$route.name === 'Quotes' ? 'fill-red-500' : 'fill-white'"
-      />
+      <IconsHouse class="fill-inherit" />
       {{ $t("sidebar.news_feed") }}
     </RouterLink>
-
     <RouterLink
       :to="{ name: 'Movies' }"
       class="flex items-center gap-10 pl-2.5 text-2xl"
+      active-class="fill-red-500"
     >
-      <IconsCamera
-        :class="$route.name === 'Movies' ? 'fill-red-500' : 'fill-white'"
-      />
+      <IconsCamera class="fill-inherit" />
       {{ $t("sidebar.list_of_movies") }}
     </RouterLink>
   </div>

@@ -12,7 +12,7 @@ import SharedHeader from "@/components/shared/SharedHeader.vue";
       <SideBar />
     </div>
     <div class="w-full">
-      <slot />
+      <RouterView />
     </div>
   </section>
 </template>
