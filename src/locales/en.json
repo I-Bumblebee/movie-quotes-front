@@ -94,6 +94,41 @@
     "password_confirmation": {
       "required": "Password confirmation is required",
       "confirmed": "Passwords do not match"
+    },
+    "title.ka": {
+      "required": "Title in Georgian is required",
+      "georgian": "Title must be in Georgian",
+      "max": "Title in Georgian must be between 1 and 45 characters"
+    },
+    "title.en": {
+      "required": "Title in English is required",
+      "english": "Title must be in English",
+      "max": "Title in English must be between 1 and 45 characters"
+    },
+    "release_year": {
+      "required": "Release year is required",
+      "numeric": "Release year must be numeric",
+      "length": "Release year must be exactly 4 digits"
+    },
+    "director_name.ka": {
+      "required": "Director's name in Georgian is required",
+      "georgian": "Director's name must be in Georgian",
+      "max": "Director's name in Georgian must be between 1 and 45 characters"
+    },
+    "director_name.en": {
+      "required": "Director's name in English is required",
+      "english": "Director's name must be in English",
+      "max": "Director's name in English must be between 1 and 45 characters"
+    },
+    "description.ka": {
+      "required": "Description in Georgian is required",
+      "georgian": "Description must be in Georgian",
+      "max": "Description in Georgian must be between 1 and 500 characters"
+    },
+    "description.en": {
+      "required": "Description in English is required",
+      "english": "Description must be in English",
+      "max": "Description in English must be between 1 and 500 characters"
     }
   },
   "forgot_password_modal": {
@@ -179,6 +214,17 @@
     "save": "Save",
     "save_changes": "Save changes",
     "toast_changes_updated_successfully": "Changes updated successfully"
+  },
+  "movie_list_view": {
+    "my_list_of_movies": "My list of movies",
+    "add_movie": "Add movie",
+    "total": "Total"
+  },
+  "search_bar": {
+    "search_by": "Search By",
+    "enter": "Enter",
+    "to_search_movies": "to search movies",
+    "to_search_quotes": "to search quotes"
   },
   "confirm_user_update_modal": {
     "text":  "Are you sure to make changes ?",

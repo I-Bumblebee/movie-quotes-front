@@ -18,4 +18,7 @@ module.exports = {
   env: {
     "cypress/globals": true,
   },
+  globals: {
+    "NodeJS": true
+  },
 };
