@@ -21,7 +21,7 @@ import BaseRedButton from "@/components/base/BaseRedButton.vue";
       <BaseRedButton
         @click="() => $router.replace({ name: 'Home' })"
         :text="$t('unauthorized.action_name')"
-        class="mt-2 border laptop:mt-9 laptop:px-4 laptop:pb-1.5 laptop:pt-3 laptop:text-xl"
+        class="mt-2 border laptop:mt-9 laptop:px-4 laptop:py-2 laptop:text-xl"
       />
     </div>
   </section>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import LayoutAuthorizedUser from "@/layouts/LayoutAuthorizedUser.vue";
 import BaseRedButton from "@/components/base/BaseRedButton.vue";
 import LoadingWheelModal from "@/components/modals/LoadingWheelModal.vue";
 import IconsArrowIcon from "@/components/icons/IconsArrowIcon.vue";
@@ -38,7 +37,6 @@ const { handleSubmit, setErrors } = useForm({
 });
 
 const updateUser = handleSubmit(async (values) => {
-  console.log(values, "values");
   if (!confirmed.value) {
     isConfirmModalVisible.value = true;
     return;
@@ -56,7 +54,6 @@ const updateUser = handleSubmit(async (values) => {
       stopEditing();
     })
     .catch((err) => {
-      console.log(err, "err");
       setErrors(err);
     })
     .finally(() => {
@@ -90,75 +87,73 @@ const displayToast = () => {
 </script>
 
 <template>
-  <LayoutAuthorizedUser>
-    <ToastNotification
-      v-if="showToast"
-      @close="showToast = false"
-      :message="$t('profile_view.toast_changes_updated_successfully')"
-    />
-    <ConfirmUserUpdateModal
-      v-if="isConfirmModalVisible"
-      @confirm="
-        isConfirmModalVisible = false;
-        confirmed = true;
-        updateUser();
-      "
-      @cancel="isConfirmModalVisible = false"
-    />
-    <div v-show="!isConfirmModalVisible">
-      <div class="mb-4 ml-8 font-medium laptop:mb-32 laptop:ml-32">
-        <h1 class="hidden text-2xl laptop:inline-flex">
-          {{ $t("profile_view.my_profile") }}
-        </h1>
-        <button
-          @click.stop.prevent="editingUser ? stopEditing() : $router.back()"
-          class="inline-block laptop:hidden"
-        >
-          <IconsArrowIcon class="scale-125" />
-        </button>
-      </div>
-      <LoadingWheelModal v-show="!store.user" />
-      <div v-if="store.user" class="laptop:ml-16 laptop:inline-block">
-        <div
-          class="flex flex-col items-center rounded-xl bg-white/5 pb-40 pt-6 laptop:inline-flex laptop:bg-cinder/100 laptop:px-48 laptop:pt-0"
-          :class="(editingPassword || editingName) && 'hidden laptop:flex'"
-        >
-          <img
-            :src="imageUrl || store.user.image"
-            alt="profile image"
-            class="h-47 w-47 rounded-full object-fill object-center laptop:-mt-20"
-          />
-          <label type="file" class="mb-10 cursor-pointer text-xl">
-            {{ $t("profile_view.upload_new_photo") }}
-            <input accept="image/*" type="file" hidden @input="onImageInput" />
-          </label>
-          <ProfileEditForm
-            @submit="updateUser"
-            @startEditingName="editingName = true"
-            @startEditingPassword="editingPassword = true"
-            :editingName="editingName"
-            :editingPassword="editingPassword"
-          />
-        </div>
-        <ProfileEditFormMobile
+  <ToastNotification
+    v-if="showToast"
+    @close="showToast = false"
+    :message="$t('profile_view.toast_changes_updated_successfully')"
+  />
+  <ConfirmUserUpdateModal
+    v-if="isConfirmModalVisible"
+    @confirm="
+      isConfirmModalVisible = false;
+      confirmed = true;
+      updateUser();
+    "
+    @cancel="isConfirmModalVisible = false"
+  />
+  <div v-show="!isConfirmModalVisible">
+    <div class="mb-4 ml-8 font-medium laptop:mb-32 laptop:ml-32">
+      <h1 class="hidden text-2xl laptop:inline-flex">
+        {{ $t("profile_view.my_profile") }}
+      </h1>
+      <button
+        @click.stop.prevent="editingUser ? stopEditing() : $router.back()"
+        class="inline-block laptop:hidden"
+      >
+        <IconsArrowIcon class="scale-125" />
+      </button>
+    </div>
+    <LoadingWheelModal v-show="!store.user" class="laptop:bg-transparent" />
+    <div v-if="store.user" class="laptop:ml-16 laptop:inline-block">
+      <div
+        class="flex flex-col items-center rounded-xl bg-white/5 pb-40 pt-6 laptop:inline-flex laptop:bg-cinder/100 laptop:px-48 laptop:pt-0"
+        :class="(editingPassword || editingName) && 'hidden laptop:flex'"
+      >
+        <img
+          :src="imageUrl || store.user.image"
+          alt="profile image"
+          class="h-47 w-47 rounded-full object-fill object-center laptop:-mt-20"
+        />
+        <label type="file" class="mb-10 cursor-pointer text-xl">
+          {{ $t("profile_view.upload_new_photo") }}
+          <input accept="image/*" type="file" hidden @input="onImageInput" />
+        </label>
+        <ProfileEditForm
           @submit="updateUser"
+          @startEditingName="editingName = true"
+          @startEditingPassword="editingPassword = true"
           :editingName="editingName"
           :editingPassword="editingPassword"
         />
-        <div
-          v-if="editingUser"
-          class="my-8 flex w-full justify-between gap-10 px-12 laptop:my-12 laptop:justify-end laptop:px-0 laptop:text-xl"
-        >
-          <button @click="stopEditing">
-            {{ $t("profile_view.cancel") }}
-          </button>
-          <BaseRedButton
-            @click="updateUser"
-            :text="$t('profile_view.save_changes')"
-            class="border laptop:border-none laptop:py-2.5"
-          />
-        </div>
+      </div>
+      <ProfileEditFormMobile
+        @submit="updateUser"
+        :editingName="editingName"
+        :editingPassword="editingPassword"
+      />
+      <div
+        v-if="editingUser"
+        class="my-8 flex w-full justify-between gap-10 px-12 laptop:my-12 laptop:justify-end laptop:px-0 laptop:text-xl"
+      >
+        <button @click="stopEditing">
+          {{ $t("profile_view.cancel") }}
+        </button>
+        <BaseRedButton
+          @click="updateUser"
+          :text="$t('profile_view.save_changes')"
+          class="border laptop:border-none laptop:py-2.5"
+        />
       </div>
     </div>
-  </LayoutAuthorizedUser>
+  </div>
 </template>

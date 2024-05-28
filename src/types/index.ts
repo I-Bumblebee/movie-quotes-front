@@ -1,42 +1,26 @@
-export type User = {
+export interface User {
   id: number;
   name: string;
   email: string;
   image: string;
   oauth: boolean;
-};
-
-export interface StoreMovieData {
-  title: {
-    en: string;
-    ka: string;
-  };
-  description: {
-    en: string;
-    ka: string;
-  };
-  director_name: {
-    en: string;
-    ka: string;
-  };
-  release_year: number;
-  poster: File;
-  genres: string[];
 }
 
-interface Meta {
+export interface Genre {
+  id: number;
+  name: string;
+}
+
+export interface Meta {
   last_page: number;
 }
 
-type MovieIndexCardContent = {
-  id: number;
-  title: string;
-  release_year: number;
-  quotes_count: number;
-  poster: string;
-};
-
-export interface MovieIndexResponse {
-  data: MovieIndexCardContent[];
+export interface PaginatedResponse<T> {
+  data: T[];
   meta: Meta;
+}
+
+export interface TranslatedField {
+  en: string;
+  ka: string;
 }

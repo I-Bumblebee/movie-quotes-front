@@ -1,17 +1,10 @@
 <script setup lang="ts">
 import IconsQuote from "@/components/icons/IconsQuote.vue";
-import { withDefaults, defineProps } from "vue";
-
-type Movie = {
-  id: number;
-  title: string;
-  release_year: number;
-  quotes_count: number;
-  poster: string;
-};
+import { defineProps } from "vue";
+import type { MovieIndexContent } from "@/types/movieTypes";
 
 const { movie } = defineProps<{
-  movie: Movie;
+  movie: MovieIndexContent;
 }>();
 </script>
 

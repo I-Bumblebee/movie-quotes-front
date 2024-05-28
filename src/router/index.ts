@@ -12,6 +12,7 @@ import OAuthGoogleCallbackView from "@/views/OAuthGoogleCallbackView.vue";
 import ForgotPasswordCallbackView from "@/views/ForgotPasswordCallbackView.vue";
 import ProfileView from "@/views/ProfileView.vue";
 import MovieListView from "@/views/MovieListView.vue";
+import LayoutAuthorizedUser from "@/layouts/LayoutAuthorizedUser.vue";
 
 const PlaceHolderView = defineComponent({});
 
@@ -20,26 +21,6 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     name: "Home",
     component: LandingView,
-  },
-  {
-    path: "/quotes",
-    name: "Quotes",
-    component: PlaceHolderView,
-  },
-  {
-    path: "/quotes/:id",
-    name: "QuoteDetail",
-    component: PlaceHolderView,
-  },
-  {
-    path: "/movies",
-    name: "Movies",
-    component: MovieListView,
-  },
-  {
-    path: "/movies/:id",
-    name: "MovieDetail",
-    component: PlaceHolderView,
   },
   {
     path: "/verify-email",
@@ -57,11 +38,6 @@ const routes: Array<RouteRecordRaw> = [
     component: ForgotPasswordCallbackView,
   },
   {
-    path: "/profile",
-    name: "Profile",
-    component: ProfileView,
-  },
-  {
     path: "/unauthorized",
     name: "UnauthorizedError",
     component: UnauthorizedErrorView,
@@ -70,6 +46,47 @@ const routes: Array<RouteRecordRaw> = [
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     component: RouteNotFoundView,
+  },
+  {
+    path: "/",
+    component: LayoutAuthorizedUser,
+    children: [
+      {
+        path: "quotes",
+        children: [
+          {
+            path: "",
+            name: "Quotes",
+            component: PlaceHolderView,
+          },
+          {
+            path: ":id",
+            name: "QuoteDetail",
+            component: PlaceHolderView,
+          },
+        ],
+      },
+      {
+        path: "/movies",
+        children: [
+          {
+            path: "",
+            name: "Movies",
+            component: MovieListView,
+          },
+          {
+            path: ":id",
+            name: "MovieDetail",
+            component: PlaceHolderView,
+          },
+        ],
+      },
+      {
+        path: "/profile",
+        name: "Profile",
+        component: ProfileView,
+      },
+    ],
   },
 ];
 

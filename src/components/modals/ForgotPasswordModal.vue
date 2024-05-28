@@ -43,7 +43,7 @@ const onSubmit = handleSubmit(async (values) => {
 });
 
 const onSuccess = (email: string) => {
-  modal.openActionModal("BaseDialogModal", {
+  modal.openWithProps("InteractiveDialogModal", {
     iconName: "IconsCircleCheckMark",
     heading: t("forgot_password_modal.success_action.heading"),
     message: t("forgot_password_modal.success_action.message"),
@@ -83,7 +83,7 @@ const onSuccess = (email: string) => {
 
       <form
         @submit="onSubmit"
-        class="mx-auto mt-7 box-content flex w-90 flex-col gap-6 overflow-y-scroll px-1 text-black"
+        class="mx-auto mt-7 box-content flex w-90 flex-col gap-6 overflow-y-visible px-1 text-black"
       >
         <BaseFormField
           name="email"

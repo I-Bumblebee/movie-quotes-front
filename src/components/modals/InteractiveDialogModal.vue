@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import LayoutModal from "@/layouts/LayoutModal.vue";
 import BaseRedButton from "@/components/base/BaseRedButton.vue";
-import { type ActionPropTypes, useModal } from "@/stores/modalController";
+import {
+  type InteractiveDialogModal,
+  useModal,
+} from "@/stores/modalController";
 import { defineAsyncComponent } from "vue";
 
 const modal = useModal();
-const props = defineProps<ActionPropTypes>();
+const props = defineProps<InteractiveDialogModal>();
 
 const icon = defineAsyncComponent(
   () => import(`@/components/icons/${props.iconName}.vue`),

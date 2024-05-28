@@ -1,5 +1,5 @@
 import axios from "@/plugins/axios";
-import type { StoreMovieData } from "@/types";
+import type { StoreMovieRequestData } from "@/types/movieTypes";
 
 const getMovies = (page: number, keyword: string) => {
   return axios.get(`/movies?page=${page}&filter[title]=${keyword}`);
@@ -9,7 +9,7 @@ const getMovie = (id: string) => {
   return axios.get(`/movies/${id}`);
 };
 
-const storeMovie = (data: StoreMovieData) => {
+const storeMovie = (data: StoreMovieRequestData) => {
   return axios.post("/movies", data, {
     headers: {
       "Content-Type": "multipart/form-data",
