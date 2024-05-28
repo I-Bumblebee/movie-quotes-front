@@ -7,8 +7,6 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import type { Quote } from "@/types/quoteTypes";
 
-
-
 const props = defineProps<Quote>();
 const router = useRouter();
 const isMenuOpen = ref(false);

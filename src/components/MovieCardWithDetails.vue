@@ -49,7 +49,9 @@ const emit = defineEmits<{
         />
       </div>
       <p class="text-lg font-medium">
-        <span class="mr-2 font-semibold text-gray-400">{{$t("movie_detail_view.director")}}:</span>
+        <span class="mr-2 font-semibold text-gray-400"
+          >{{ $t("movie_detail_view.director") }}:</span
+        >
         {{ props.movie.director }}
       </p>
       <p class="text-lg">{{ props.movie.description }}</p>

@@ -9,7 +9,6 @@ const emit = defineEmits<{
   (e: "show"): void;
   (e: "close"): void;
 }>();
-
 </script>
 
 <template>
@@ -19,15 +18,15 @@ const emit = defineEmits<{
   >
     <button @click="emit('show')" class="flex items-center gap-4 pl-10">
       <IconsEyeOpen class="h-5 w-5" />
-      {{$t("quote_card_menu.view_quote")}}
+      {{ $t("quote_card_menu.view_quote") }}
     </button>
     <button @click="emit('edit')" class="flex items-center gap-4 pl-10">
       <IconsPencil class="fill-white" />
-      {{$t("quote_card_menu.edit")}}
+      {{ $t("quote_card_menu.edit") }}
     </button>
     <button @click="emit('delete')" class="flex items-center gap-4 pl-10">
       <IconsTrashCan />
-      {{$t("quote_card_menu.delete")}}
+      {{ $t("quote_card_menu.delete") }}
     </button>
   </div>
 </template>

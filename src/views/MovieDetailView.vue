@@ -50,7 +50,7 @@ const onDeleteMovie = (id: string) => {
       :movie="movie"
     />
     <div
-      class="mt-8 flex flex-col-reverse gap-8 laptop:gap-4 px-9 laptop:mt-10 laptop:flex-row laptop:items-center laptop:p-0"
+      class="mt-8 flex flex-col-reverse gap-8 px-9 laptop:mt-10 laptop:flex-row laptop:items-center laptop:gap-4 laptop:p-0"
     >
       <p class="text-2xl font-medium laptop:m-0">
         {{ $t("movie_detail_view.quotes") }}
