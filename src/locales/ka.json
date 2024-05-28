@@ -179,6 +179,24 @@
     "news_feed": "ნიუს ფიდი",
     "list_of_movies": "ჩემი ფილმები"
   },
+  "add_movie_modal": {
+    "add_movie": "დაამატე ფილმი"
+  },
+  "edit_movie_modal": {
+    "edit_movie": "ფილმის რედაქტირება"
+  },
+  "movie_detail_view": {
+    "movie_description": "ფილმის არწერა",
+    "director": "რეჟისორი",
+    "quotes": "ციტატა",
+    "total": "სულ",
+    "add_quote": "დაამატე ციტატა"
+  },
+  "quote_card_menu": {
+    "view_quote": "ციტატის ნახვა",
+    "edit": "რედაქტირება",
+    "delete": "წაშლა"
+  },
   "validations": {
     "name": {
       "required": "სახელი სავალდებულოა",
@@ -234,6 +252,9 @@
       "required": "აღწერა ინგლისურად სავალდებულოა",
       "english": "აღწერა უნდა იყოს ინგლისურად",
       "max": "აღწერა ინგლისურად უნდა იყოს 1-დან 500 სიმბოლომდე"
+    },
+    "genres": {
+      "required": "მონიშნეთ მინიმუმ 1 ჟანრი"
     }
   },
   "route_not_found": {

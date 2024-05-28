@@ -129,6 +129,9 @@
       "required": "Description in English is required",
       "english": "Description must be in English",
       "max": "Description in English must be between 1 and 500 characters"
+    },
+    "genres": {
+      "required": "Please select at least one genre"
     }
   },
   "forgot_password_modal": {
@@ -225,6 +228,24 @@
     "enter": "Enter",
     "to_search_movies": "to search movies",
     "to_search_quotes": "to search quotes"
+  },
+  "add_movie_modal": {
+    "add_movie": "Add movie"
+  },
+  "edit_movie_modal": {
+    "edit_movie": "Edit movie"
+  },
+  "movie_detail_view": {
+    "movie_description": "Movie description",
+    "director": "Director",
+    "quotes": "Quotes",
+    "total": "Total",
+    "add_quote": "Add quote"
+  },
+  "quote_card_menu": {
+    "view_quote": "View Quote",
+    "edit": "Edit",
+    "delete": "Delete"
   },
   "confirm_user_update_modal": {
     "text":  "Are you sure to make changes ?",
