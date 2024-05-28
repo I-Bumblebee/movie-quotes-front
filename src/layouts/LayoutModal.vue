@@ -5,13 +5,19 @@ import useModal from "@/stores/modalController";
 type PropTypes = {
   class?: string;
   closable?: boolean;
+  blur?: boolean;
 };
-const props = defineProps<PropTypes>();
+const props = withDefaults(defineProps<PropTypes>(), {
+  blur: true,
+});
 const modal = useModal();
 </script>
 
 <template>
-  <div class="fixed inset-0 h-full backdrop-blur-sm">
+  <div
+    class="fixed inset-0 h-full"
+    :class="props.blur ? 'backdrop-blur-sm backdrop-filter' : ''"
+  >
     <div
       class="h-full w-full bg-black bg-gradient-radial laptop:opacity-50"
       :class="props.class"
@@ -19,7 +25,7 @@ const modal = useModal();
   </div>
   <div class="fixed inset-0">
     <div
-      class="relative flex h-full w-full items-center justify-center text-white"
+      class="relative flex h-full w-full items-center justify-center overflow-y-scroll pb-24 text-white"
     >
       <slot />
       <IconsArrowIcon
