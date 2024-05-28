@@ -13,6 +13,7 @@ import ForgotPasswordCallbackView from "@/views/ForgotPasswordCallbackView.vue";
 import ProfileView from "@/views/ProfileView.vue";
 import MovieListView from "@/views/MovieListView.vue";
 import LayoutAuthorizedUser from "@/layouts/LayoutAuthorizedUser.vue";
+import MovieDetailView from "@/views/MovieDetailView.vue";
 
 const PlaceHolderView = defineComponent({});
 
@@ -77,7 +78,7 @@ const routes: Array<RouteRecordRaw> = [
           {
             path: ":id",
             name: "MovieDetail",
-            component: PlaceHolderView,
+            component: MovieDetailView,
           },
         ],
       },
