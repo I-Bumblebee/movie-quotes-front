@@ -11,11 +11,11 @@ const { movie } = defineProps<{
 <template>
   <RouterLink
     :to="{ name: 'MovieDetail', params: { id: movie.id.toString() } }"
-    class="flex w-full flex-col gap-3.5"
+    class="inline-flex w-full flex-col items-start gap-3.5"
   >
     <img
       :src="movie.poster"
-      class="h-full max-h-93 rounded-xl object-cover object-center"
+      class="h-93 h-full max-h-93 min-h-max w-full rounded-xl object-cover object-center"
       alt="movie poster"
     />
     <p class="text-2xl font-medium">
