@@ -13,6 +13,8 @@ import {
   min,
   max,
   alpha_num as alphaNum,
+  numeric,
+  length,
 } from "@vee-validate/rules";
 import Cookies from "js-cookie";
 
@@ -22,6 +24,16 @@ defineRule("confirmed", confirmed);
 defineRule("min", min);
 defineRule("max", max);
 defineRule("alpha_num", alphaNum);
+defineRule("numeric", numeric);
+defineRule("length", length);
+defineRule("georgian", (value: string) => {
+  const pattern = /^[ა-ჰ\s.,!?(){}[\]<>:;"“„'`—~@#$%^&*_\-+=|\\/]+$/;
+  return pattern.test(value) ? true : "Invalid Georgian text";
+});
+defineRule("english", (value: string) => {
+  const pattern = /^[a-zA-Z\s.,!?(){}[\]<>:;"“„'`—~@#$%^&*_\-+=|\\/]+$/;
+  return pattern.test(value) ? true : "Invalid English text";
+});
 
 const messages = {
   ka: {
