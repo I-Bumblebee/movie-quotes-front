@@ -11,7 +11,6 @@ const languages: Record<string, string> = {
 };
 
 const { locale, availableLocales } = useI18n();
-console.log(locale.value);
 
 const selectedLanguage = ref(locale.value);
 const isDropdownOpen = ref(false);
@@ -23,7 +22,14 @@ const toggleDropdown = () => {
 const selectLanguage = (lang: string) => {
   isDropdownOpen.value = false;
   window.location.reload();
-  Cookies.set("locale", lang, { expires: 365 });
+
+  Cookies.set("locale", lang, {
+    expires: 365,
+    secure: import.meta.env.VITE_APP_ENV === "production",
+    sameSite: "Lax",
+    domain: import.meta.env.VITE_APP_DOMAIN,
+    path: "/",
+  });
 
   selectedLanguage.value = lang as keyof typeof availableLocales.values;
   locale.value = lang as keyof typeof availableLocales.values;

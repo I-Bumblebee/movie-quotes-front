@@ -7,7 +7,7 @@ const updateUser = (
   passwordConfirmation?: string,
 ) => {
   return axios.post(
-    "/user/update",
+    "/user?_method=PATCH",
     {
       name,
       password,
