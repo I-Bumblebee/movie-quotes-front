@@ -33,7 +33,7 @@ jobs:
             cd apps
             cd movie-quotes-front-luka-trapaidze
             git pull
-            npm ci
+            npm i
             npm run build
           EOF
     
