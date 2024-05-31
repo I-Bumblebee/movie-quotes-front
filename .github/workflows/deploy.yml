@@ -30,6 +30,7 @@ jobs:
         if: ${{ success() }}
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} << EOF
+            export NODE_OPTIONS='--max-old-space-size=4096'
             cd apps
             cd movie-quotes-front-luka-trapaidze
             git pull
