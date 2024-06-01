@@ -3,9 +3,6 @@ export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      minWidth: {
-        "xl-plus": "37rem",
-      },
       fontSize: {
         "3xl-plus": ["2rem", "2.5rem"],
       },
@@ -16,9 +13,13 @@ export default {
         30: "7.5rem",
         22: "5.5rem",
         18: "4.5rem",
+        19: "4.75rem",
       },
       borderRadius: {
         "lg-plus": "0.625rem",
+      },
+      minWidth: {
+        "xl-plus": "37rem",
       },
       maxWidth: {
         66: "16.5rem",
@@ -26,12 +27,20 @@ export default {
       maxHeight: {
         93: "23.25rem",
         md: "28rem",
+        lg: "31.25rem",
       },
       width: {
         90: "22.5rem",
         15: "3.75rem",
         47: "11.75rem",
         "2xl": "42rem",
+        13: "3.25rem",
+      },
+      height: {
+        "screen-3/4": "75vh",
+        15: "3.75rem",
+        47: "11.75rem",
+        13: "3.25rem",
       },
       colors: {
         almond: "#DDCCAA",
@@ -61,6 +70,8 @@ export default {
         dimgray: "#54535A",
         bastille: "#24222F",
         blueviolet: "#9747FF",
+        whitesmoke: "#EFEFEF",
+        crimson: "#F3426C",
       },
       backgroundImage: {
         "gradient-radial":
@@ -73,11 +84,6 @@ export default {
         "action-modal-bg":
           "linear-gradient(112.94deg, rgba(239, 239, 239, 0.3) -1.81%, rgba(239, 239, 239, 0.00514528) 102.5%, rgba(1, 1, 1, 0.00260417) 102.51%, rgba(239, 239, 239, 0.05) 102.52%)",
         "gradient-none": "none",
-      },
-      height: {
-        "screen-3/4": "75vh",
-        15: "3.75rem",
-        47: "11.75rem",
       },
       boxShadow: {
         overlay: "inset 0 0 200px 0 rgba(0, 0, 0, 0.75)",
