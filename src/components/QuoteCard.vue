@@ -44,12 +44,12 @@ const isMenuOpen = ref(false);
     <hr class="my-6 block border-0 border-b border-dimgray" />
     <div class="flex gap-6">
       <span class="flex items-center gap-3 text-2xl">
-        {{ props.comments }}
+        {{ props.comments_count }}
         <IconsComment />
       </span>
       <span class="flex items-center gap-3 text-2xl">
-        {{ props.likes }}
-        <IconsHeart />
+        {{ props.likes_count }}
+        <IconsHeart class="fill-white" />
       </span>
     </div>
   </div>
