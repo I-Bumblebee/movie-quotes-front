@@ -1,10 +1,12 @@
 import { defineStore } from "pinia";
 import type { User } from "@/types";
 import { fetchUser, logout } from "@/services/api/auth";
+import router from "@/router";
 
 type authState = {
   user?: User;
   loading: boolean;
+  userIsBeingAuthenticated: boolean;
 };
 
 const useUserAuthStore = defineStore({
@@ -12,6 +14,7 @@ const useUserAuthStore = defineStore({
   state: (): authState => ({
     user: undefined,
     loading: false,
+    userIsBeingAuthenticated: true,
   }),
   getters: {
     isAuthenticated: (state) => !!state.user,
@@ -25,6 +28,7 @@ const useUserAuthStore = defineStore({
         })
         .finally(() => {
           this.loading = false;
+          this.userIsBeingAuthenticated = false;
         });
     },
     logout() {
@@ -32,6 +36,7 @@ const useUserAuthStore = defineStore({
       logout()
         .then(() => {
           this.user = undefined;
+          router.replace({ name: "Home" });
         })
         .catch((error) => {
           console.error(error);

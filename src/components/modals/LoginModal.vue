@@ -60,6 +60,7 @@ const loginWithGoogle = () => {
 };
 
 const onSuccess = () => {
+  router.push({ name: "Quotes" });
   modal.openWithProps("InteractiveDialogModal", {
     iconName: "IconsCircleCheckMark",
     heading: t("login_modal.success_action.heading"),
@@ -67,7 +68,6 @@ const onSuccess = () => {
     actionName: t("login_modal.success_action.action_name"),
     action: () => {
       modal.close();
-      router.push({ name: "Quotes" });
     },
   });
 };

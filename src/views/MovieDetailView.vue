@@ -70,7 +70,7 @@ const onDeleteMovie = (id: string) => {
       </div>
     </div>
     <div class="mt-12">
-      <QuoteCard v-for="quote in quotes" :key="quote.quote" v-bind="quote" />
+      <QuoteCard v-for="quote in quotes" :key="quote.id" v-bind="quote" />
     </div>
     <div class="h-screen"></div>
   </div>
