@@ -22,7 +22,7 @@ watch(inputText, () => {
     if (input.startsWith("@")) {
       router.push({ query: { "filter[title]": input.slice(1) } });
     } else if (input.startsWith("#")) {
-      router.push({ query: { "filter[quote]": input } });
+      router.push({ query: { "filter[quote]": input.slice(1) } });
     } else {
       router.push({ query: { "filter[title]": "" } });
     }
@@ -47,31 +47,32 @@ const focusInput = () => {
   >
     <div class="relative flex cursor-pointer items-center gap-4">
       <IconsSearch class="h-5 w-5 min-w-5" />
-      <span v-show="!active"> {{ $t("search_bar.search_by") }} </span>
-      <span
-        v-show="active && !inputText"
-        class="absolute ml-9 whitespace-nowrap text-gray-400"
-      >
-        {{ $t("search_bar.enter") }}
-        <span class="text-white">@</span>
-        {{ $t("search_bar.to_search_movies") }}
-        <span v-if="props.page === 'quoteList'">
-          <span class="text-white">#</span>
-          , {{ $t("search_bar.enter") }}
-          <span class="text-white">#</span>
-          {{ $t("search_bar.to_search_quotes") }}
+      <transition name="fade" type="transition">
+        <span
+          v-show="active && !inputText"
+          class="absolute ml-9 whitespace-nowrap text-gray-400"
+        >
+          {{ $t("search_bar.enter") }}
+          <span class="text-white">@</span>
+          {{ $t("search_bar.to_search_movies") }}
+          <span v-if="props.page === 'quoteList'">
+            , {{ $t("search_bar.enter") }}
+            <span class="text-white">#</span>
+            {{ $t("search_bar.to_search_quotes") }}
+          </span>
         </span>
-      </span>
+      </transition>
     </div>
     <input
       v-model="inputText"
       ref="inputRef"
       type="text"
-      class="bg-transparent outline-none transition-all"
+      class="bg-transparent placeholder-gray-400 outline-none transition-all duration-200 ease-in-out"
       :class="{
-        'w-0 ': !active,
+        'w-24 ': !active,
         'w-2xl': active,
       }"
+      :placeholder="!active ? $t('search_bar.search_by') : ''"
     />
     <hr
       v-show="active"
@@ -79,3 +80,21 @@ const focusInput = () => {
     />
   </div>
 </template>
+
+<style scoped>
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-enter-to {
+  opacity: 1;
+}
+.fade-enter-active {
+  transition: opacity 400ms ease-in-out;
+}
+.fade-leave-active {
+  transition: opacity 90ms ease-in-out;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

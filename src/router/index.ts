@@ -7,36 +7,39 @@ import LandingView from "@/views/LandingView.vue";
 import RouteNotFoundView from "@/views/RouteNotFoundView.vue";
 import UnauthorizedErrorView from "@/views/UnauthorizedErrorView.vue";
 import VerifyEmailCallbackView from "@/views/VerifyEmailCallbackView.vue";
-import { defineComponent } from "vue";
 import OAuthGoogleCallbackView from "@/views/OAuthGoogleCallbackView.vue";
 import ForgotPasswordCallbackView from "@/views/ForgotPasswordCallbackView.vue";
 import ProfileView from "@/views/ProfileView.vue";
 import MovieListView from "@/views/MovieListView.vue";
 import LayoutAuthorizedUser from "@/layouts/LayoutAuthorizedUser.vue";
 import MovieDetailView from "@/views/MovieDetailView.vue";
-
-const PlaceHolderView = defineComponent({});
+import QuoteListView from "@/views/QuoteListView.vue";
+import { authGuard, guestGuard } from "@/router/guards";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
     component: LandingView,
+    beforeEnter: [guestGuard],
   },
   {
     path: "/verify-email",
     name: "VerifyEmail",
     component: VerifyEmailCallbackView,
+    beforeEnter: [guestGuard],
   },
   {
     path: "/oauth/google/callback",
     name: "GoogleCallback",
     component: OAuthGoogleCallbackView,
+    beforeEnter: [guestGuard],
   },
   {
     path: "/reset-password",
     name: "ForgotPasswordCallback",
     component: ForgotPasswordCallbackView,
+    beforeEnter: [guestGuard],
   },
   {
     path: "/unauthorized",
@@ -58,12 +61,7 @@ const routes: Array<RouteRecordRaw> = [
           {
             path: "",
             name: "Quotes",
-            component: PlaceHolderView,
-          },
-          {
-            path: ":id",
-            name: "QuoteDetail",
-            component: PlaceHolderView,
+            component: QuoteListView,
           },
         ],
       },
@@ -88,6 +86,7 @@ const routes: Array<RouteRecordRaw> = [
         component: ProfileView,
       },
     ],
+    beforeEnter: [authGuard],
   },
 ];
 
