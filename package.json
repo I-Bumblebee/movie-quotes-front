@@ -16,12 +16,16 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@types/pusher-js": "^5.1.0",
     "@vee-validate/i18n": "^4.12.8",
     "@vee-validate/rules": "^4.12.8",
     "@vueuse/components": "^10.9.0",
+    "dayjs": "^1.11.11",
     "js-cookie": "^3.0.5",
+    "laravel-echo": "^1.16.1",
     "pinia": "^2.1.7",
     "prettier-plugin-tailwindcss": "^0.5.14",
+    "pusher-js": "^8.4.0-rc2",
     "vee-validate": "^4.12.7",
     "vue": "^3.4.21",
     "vue-i18n": "^9.13.1",
