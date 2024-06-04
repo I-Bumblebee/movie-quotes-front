@@ -1,4 +1,4 @@
-import type { TranslatedField } from "@/types/index";
+import type { TranslatedField, BasicUser } from "@/types/index";
 
 export interface Quote {
   id: number;
@@ -6,11 +6,6 @@ export interface Quote {
   image: string;
   likes_count: number;
   comments_count: number;
-}
-
-interface BasicUser {
-  name: string;
-  image: string;
 }
 
 export interface Comment {
