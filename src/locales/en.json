@@ -257,6 +257,29 @@
     "news_feed": "News feed",
     "list_of_movies": "List of movies"
   },
+  "relative_time_locales": {
+    "future": "in %s",
+    "past": "%s ago",
+    "s": "a few sec",
+    "m": "1 min",
+    "mm": "%d min",
+    "h": "1 hr",
+    "hh": "%d hr",
+    "d": "1 day",
+    "dd": "%d days",
+    "M": "1 mo",
+    "MM": "%d mo",
+    "y": "1 yr",
+    "yy": "%d yr"
+  },
+  "notifications": {
+    "notifications": "Notifications",
+    "no_notifications": "No notifications",
+    "mark_all_as_read": "Mark all as read",
+    "commented_on_your_quote": "Commented to your movie quote",
+    "reacted_on_your_quote": "Reacted to your quote",
+    "new": "New"
+  },
   "route_not_found": {
     "heading": "Whoops!",
     "message": "We can't see the page you are looking for",

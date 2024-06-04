@@ -9,10 +9,13 @@ export default {
       scale: {
         65: "0.65",
       },
+      spacing: {
+        18: "4.5rem",
+        22: "5.5rem",
+        7: "1.75rem",
+      },
       padding: {
         30: "7.5rem",
-        22: "5.5rem",
-        18: "4.5rem",
         19: "4.75rem",
       },
       borderRadius: {
@@ -72,6 +75,7 @@ export default {
         blueviolet: "#9747FF",
         whitesmoke: "#EFEFEF",
         crimson: "#F3426C",
+        gainsboro: "#D9D9D9",
       },
       backgroundImage: {
         "gradient-radial":
