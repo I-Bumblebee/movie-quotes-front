@@ -3,6 +3,7 @@ import SharedLanguageSwitcher from "@/components/shared/SharedLanguageSwitcher.v
 import useUserAuth from "@/stores/userAuth";
 import useModal from "@/stores/modalController";
 import BaseRedButton from "@/components/base/BaseRedButton.vue";
+import NotificationDropdown from "@/components/NotificationDropdown.vue";
 
 const user = useUserAuth();
 const modal = useModal();
@@ -19,7 +20,8 @@ const modal = useModal();
       MOVIE QUOTES
     </RouterLink>
     <div
-      class="flex gap-2 text-sm text-white laptop:flex-row-reverse laptop:gap-4 laptop:text-base"
+      class="flex items-center gap-2 text-sm text-white laptop:flex-row-reverse laptop:gap-10 laptop:text-base"
+      :class="!user.isAuthenticated && 'laptop:gap-4'"
     >
       <button
         v-if="!user.isAuthenticated"
@@ -42,6 +44,7 @@ const modal = useModal();
         {{ $t("header.logout") }}
       </button>
       <SharedLanguageSwitcher class="hidden laptop:block" />
+      <NotificationDropdown v-if="user.isAuthenticated" />
     </div>
   </header>
 </template>

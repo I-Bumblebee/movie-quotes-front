@@ -197,6 +197,29 @@
     "edit": "რედაქტირება",
     "delete": "წაშლა"
   },
+  "relative_time_locales": {
+    "future": "%s-ში",
+    "past": "%s წინ",
+    "s": "რამდენიმე წამის",
+    "m": "1 წთ",
+    "mm": "%d წთ",
+    "h": "1 სთ",
+    "hh": "%d სთ",
+    "d": "1 დღის",
+    "dd": "%d დღის",
+    "M": "1 თვის",
+    "MM": "%d თვის",
+    "y": "1 წლის",
+    "yy": "%d წლის"
+  },
+  "notifications": {
+    "notifications": "შეტყობინებები",
+    "no_notifications": "შეტყობინებები არ არის",
+    "mark_all_as_read": "მონიშნე ყველა",
+    "commented_on_your_quote": "დატოვა კომენტარი თქვენს ციტატაზე",
+    "reacted_on_your_quote": "ჰქონდა რეაქცია თქვენს ციტატაზე",
+    "new": "ახალი"
+  },
   "validations": {
     "name": {
       "required": "სახელი სავალდებულოა",

@@ -15,7 +15,11 @@ export type EditMovieModalProps = {
   movieId: string;
 };
 
-type PropTypes = InteractiveDialogModal | EditMovieModalProps;
+type QuoteModalProps = {
+  quoteId: number;
+};
+
+type PropTypes = InteractiveDialogModal | EditMovieModalProps | QuoteModalProps;
 
 type Modal = {
   isOpen: boolean;
