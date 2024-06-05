@@ -58,20 +58,22 @@ const toggleLike = () => {
       />
       {{ props.quote.user.name }}
     </div>
-    <p class="">
-      "{{ props.quote.quote }}"
-      <span class="whitespace-nowrap">
-        movie-
-        <span class="font-medium text-almond">
-          {{ props.quote.movie.title }}
+    <slot>
+      <p>
+        "{{ props.quote.quote }}"
+        <span class="whitespace-nowrap">
+          movie-
+          <span class="font-medium text-almond">
+            {{ props.quote.movie.title }}
+          </span>
+          ({{ props.quote.movie.release_year }})
         </span>
-        ({{ props.quote.movie.release_year }})
-      </span>
-    </p>
+      </p>
+    </slot>
     <img
       :src="props.quote.image"
       alt="quote cover image"
-      class="mt-2.5 max-h-lg min-h-max w-full rounded-lg object-cover object-center"
+      class="mt-2.5 h-lg w-full rounded-lg object-cover object-center"
     />
     <div class="flex gap-6">
       <span class="flex items-center gap-3 text-2xl">
