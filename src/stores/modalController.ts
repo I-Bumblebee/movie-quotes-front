@@ -1,5 +1,6 @@
 import { markRaw } from "vue";
 import { defineStore } from "pinia";
+import type { DetailedMovie } from "@/types/movieTypes";
 
 export type InteractiveDialogModal = {
   iconName: string;
@@ -19,7 +20,11 @@ type QuoteModalProps = {
   quoteId: number;
 };
 
-type PropTypes = InteractiveDialogModal | EditMovieModalProps | QuoteModalProps;
+type PropTypes =
+  | InteractiveDialogModal
+  | EditMovieModalProps
+  | QuoteModalProps
+  | DetailedMovie;
 
 type Modal = {
   isOpen: boolean;

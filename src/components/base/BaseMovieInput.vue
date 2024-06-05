@@ -10,6 +10,7 @@ type PropTypes = {
   placeholderClass?: string;
   disabled?: boolean;
   textarea?: boolean;
+  defaultValue?: string;
 };
 
 const props = withDefaults(defineProps<PropTypes>(), {
@@ -23,6 +24,7 @@ const {
   meta,
 } = useField(props.name, undefined, {
   bails: false,
+  initialValue: props.defaultValue && `"${props.defaultValue}"`,
 });
 
 const filled = computed(() => !!fieldValue.value);
@@ -46,11 +48,11 @@ const handleInput = (event: Event) => {
 <template>
   <div>
     <div
-      class="group rounded border border-stale-gray bg-cinder px-3.5 py-2.5 outline-none laptop:text-xl"
+      class="group rounded border border-stale-gray/70 bg-cinder px-3.5 py-2.5 outline-none"
     >
       <span
         v-if="props.label"
-        class="float-left inline pr-2 leading-7 group-focus-within:font-medium group-focus-within:text-stale-gray laptop:group-focus-within:text-base laptop:group-focus-within:leading-7"
+        class="pointer-events-none float-left inline pr-2 not-italic leading-7 group-focus-within:font-medium group-focus-within:text-stale-gray laptop:group-focus-within:text-base laptop:group-focus-within:leading-7"
         :class="
           filled
             ? 'text-base font-medium text-stale-gray laptop:text-base laptop:leading-7'
@@ -61,14 +63,14 @@ const handleInput = (event: Event) => {
       </span>
       <span
         v-if="!filled && props.placeholder"
-        class="float-left"
+        class="pointer-events-none float-left leading-7"
         :class="placeholderClass"
       >
         {{ props.placeholder }}
       </span>
       <span
         v-if="props.language"
-        class="float-right pl-2 leading-7 text-gray-400 laptop:text-xl"
+        class="pointer-events-none float-right pl-2 not-italic leading-7 text-gray-400 laptop:text-xl"
       >
         {{ props.language }}
       </span>

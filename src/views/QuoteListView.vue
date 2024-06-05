@@ -8,12 +8,14 @@ import SharedSearchBar from "@/components/shared/SharedSearchBar.vue";
 import { vElementVisibility } from "@vueuse/components";
 import { useRoute } from "vue-router";
 import QuoteDetailedCard from "@/components/QuoteDetailedCard.vue";
+import useModal from "@/stores/modalController";
 
 const quotes = ref<DetailedQuote[]>([]);
 const page = ref<number>(1);
 const lastPage = ref<number>(1);
 const loading = ref(false);
 const route = useRoute();
+const modal = useModal();
 
 const quoteSearchParam = computed(
   () => (route.query["filter[quote]"] || "") as string,
@@ -66,6 +68,7 @@ const onReachEnd = (state: boolean) => {
   >
     <div class="ml-5 flex items-center gap-6 laptop:-mb-5 laptop:ml-0">
       <button
+        @click.stop="modal.open('WriteNewQuoteModal')"
         class="flex w-full items-center gap-4 rounded-lg-plus px-4 py-3 text-xl laptop:bg-bastille"
       >
         <IconsPencilBox />

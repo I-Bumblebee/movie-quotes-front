@@ -4,11 +4,12 @@ import IconsComment from "@/components/icons/IconsComment.vue";
 import IconsHeart from "@/components/icons/IconsHeart.vue";
 import QuoteCardMenu from "@/components/QuoteCardMenu.vue";
 import { ref } from "vue";
-import { useRouter } from "vue-router";
 import type { Quote } from "@/types/quoteTypes";
+import useModal from "@/stores/modalController";
+import { deleteQuote } from "@/services/api/quote";
 
 const props = defineProps<Quote>();
-const router = useRouter();
+const modal = useModal();
 const isMenuOpen = ref(false);
 </script>
 
@@ -23,9 +24,9 @@ const isMenuOpen = ref(false);
       <IconsDots />
       <QuoteCardMenu
         v-if="isMenuOpen"
-        @delete="console.log('delete')"
-        @edit="console.log('edit')"
-        @show="router.push({ name: 'QuoteDetail', params: { id } })"
+        @delete="deleteQuote(props.id)"
+        @edit="modal.openWithProps('EditQuoteModal', { quoteId: props.id })"
+        @show="modal.openWithProps('ViewQuoteModal', { quoteId: props.id })"
         @close="isMenuOpen = false"
         :isOpen="isMenuOpen"
         class="absolute -right-1 bottom-4 laptop:bottom-auto laptop:left-0 laptop:mt-2"

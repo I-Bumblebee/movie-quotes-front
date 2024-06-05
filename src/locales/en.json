@@ -132,6 +132,16 @@
     },
     "genres": {
       "required": "Please select at least one genre"
+    },
+    "quote.ka": {
+      "required": "Quote in Georgian is required",
+      "georgian": "Quote must be in Georgian",
+      "max": "Quote in Georgian must be between 1 and 500 characters"
+    },
+    "quote.en": {
+      "required": "Quote in English is required",
+      "english": "Quote must be in English",
+      "max": "Quote in English must be between 1 and 500 characters"
     }
   },
   "forgot_password_modal": {
@@ -256,6 +266,26 @@
     "edit_your_profile": "Edit your profile",
     "news_feed": "News feed",
     "list_of_movies": "List of movies"
+  },
+  "add_new_quote_modal": {
+    "add_quote": "Add Quote",
+    "director": "Director",
+    "submit_button_text": "Add quote"
+  },
+  "edit_quote_modal": {
+    "edit_quote": "Edit Quote",
+    "submit_button_text": "Save changes",
+    "delete": "Delete"
+  },
+  "view_quote_modal": {
+    "view_quote": "View Quote"
+  },
+  "write_new_quote_modal": {
+    "write_new_quote": "Write New Quote",
+    "submit_button_text": "Post"
+  },
+  "movie_selector_dropdown": {
+    "choose_movie": "Choose movie"
   },
   "relative_time_locales": {
     "future": "in %s",

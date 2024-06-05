@@ -63,7 +63,7 @@ const onDeleteMovie = (id: string) => {
       <span class="hidden text-2xl text-stale-gray laptop:block">|</span>
       <div>
         <BaseRedButton
-          @click="console.log('Add Quote')"
+          @click="modal.openWithProps('AddNewQuoteModal', movie)"
           :text="$t('movie_detail_view.add_quote')"
           class="border py-1 text-base laptop:border-none laptop:py-2.5 laptop:text-xl"
         />
