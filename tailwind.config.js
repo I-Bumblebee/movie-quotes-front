@@ -13,6 +13,9 @@ export default {
         18: "4.5rem",
         22: "5.5rem",
         7: "1.75rem",
+        13: "3.25rem",
+        15: "3.75rem",
+        47: "11.75rem",
       },
       padding: {
         30: "7.5rem",
@@ -23,27 +26,28 @@ export default {
       },
       minWidth: {
         "xl-plus": "37rem",
+        "4xl": "56rem",
       },
       maxWidth: {
         66: "16.5rem",
       },
+      minHeight: {
+        md: "28rem",
+        lg: "32rem",
+      },
       maxHeight: {
         93: "23.25rem",
         md: "28rem",
-        lg: "31.25rem",
+        lg: "32rem",
       },
       width: {
         90: "22.5rem",
-        15: "3.75rem",
-        47: "11.75rem",
         "2xl": "42rem",
-        13: "3.25rem",
       },
       height: {
         "screen-3/4": "75vh",
-        15: "3.75rem",
-        47: "11.75rem",
-        13: "3.25rem",
+        76: "19rem",
+        lg: "32rem",
       },
       colors: {
         almond: "#DDCCAA",

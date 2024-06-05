@@ -212,6 +212,26 @@
     "y": "1 წლის",
     "yy": "%d წლის"
   },
+  "add_new_quote_modal": {
+    "add_quote": "ციტატის დამატება",
+    "director": "რეჟისორი",
+    "submit_button_text": "დაპოსტვა"
+  },
+  "edit_quote_modal": {
+    "edit_quote": "ციტატის რედაქტირება",
+    "submit_button_text": "ცვლილების შენახვა",
+    "delete": "წაშლა"
+  },
+  "view_quote_modal": {
+    "view_quote": "ციტატა"
+  },
+  "write_new_quote_modal": {
+    "write_new_quote": "ახალი ციტატა",
+    "submit_button_text": "დაპოსტვა"
+  },
+  "movie_selector_dropdown": {
+    "choose_movie": "აირჩიე ფილმი"
+  },
   "notifications": {
     "notifications": "შეტყობინებები",
     "no_notifications": "შეტყობინებები არ არის",
@@ -278,6 +298,16 @@
     },
     "genres": {
       "required": "მონიშნეთ მინიმუმ 1 ჟანრი"
+    },
+    "quote.ka": {
+      "required": "ციტატა ქართულად სავალდებულოა",
+      "georgian": "ციტატა უნდა იყოს ქართულად",
+      "max": "ციტატა ქართულად უნდა იყოს 1-დან 500 სიმბოლომდე"
+    },
+    "quote.en": {
+      "required": "ციტატა ინგლისურად სავალდებულოა",
+      "english": "ციტატა უნდა იყოს ინგლისურად",
+      "max": "ციტატა ინგლისურად უნდა იყოს 1-დან 500 სიმბოლომდე"
     }
   },
   "route_not_found": {
