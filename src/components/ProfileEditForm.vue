@@ -44,10 +44,11 @@ const store = useUserAuthStore();
       :value="store.user.email"
     />
     <DisabledFormField
+      v-if="!store.user.oauth"
       @edit="emit('startEditingPassword')"
       :label="$t('profile_view.password')"
       value="••••••••••••"
-      :editable="!store.user.oauth"
+      editable
     />
     <div v-if="props.editingPassword" class="flex w-full flex-col gap-12 pr-16">
       <div class="rounded border border-gray-400/30 p-6 text-white">

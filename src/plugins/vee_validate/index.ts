@@ -27,12 +27,12 @@ defineRule("alpha_num", alphaNum);
 defineRule("numeric", numeric);
 defineRule("length", length);
 defineRule("georgian", (value: string) => {
-  const pattern = /^[ა-ჰ\s.,!?(){}[\]<>:;"“„'`—~@#$%^&*_\-+=|\\/]+$/;
-  return pattern.test(value) ? true : "Invalid Georgian text";
+  const pattern = /^[ა-ჰ\s.,!?(){}[\]<>:;"“„'`—~@#$%^&*_\-+=|\\/]*$/;
+  return pattern.test(value);
 });
 defineRule("english", (value: string) => {
-  const pattern = /^[a-zA-Z\s.,!?(){}[\]<>:;"“„'`—~@#$%^&*_\-+=|\\/]+$/;
-  return pattern.test(value) ? true : "Invalid English text";
+  const pattern = /^[a-zA-Z\s.,!?(){}[\]<>:;"“„'`—~@#$%^&*_\-+=|\\/]*$/;
+  return pattern.test(value);
 });
 
 const messages = {
