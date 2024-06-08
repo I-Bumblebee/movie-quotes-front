@@ -36,7 +36,6 @@ export default {
         lg: "32rem",
       },
       maxHeight: {
-        93: "23.25rem",
         md: "28rem",
         lg: "32rem",
       },
@@ -45,6 +44,7 @@ export default {
         "2xl": "42rem",
       },
       height: {
+        93: "23.25rem",
         "screen-3/4": "75vh",
         76: "19rem",
         lg: "32rem",
