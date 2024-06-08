@@ -38,7 +38,10 @@ const selectLanguage = (lang: string) => {
 </script>
 
 <template>
-  <div v-click-outside="(isDropdownOpen = false)" class="relative m-auto w-14">
+  <div
+    v-click-outside="() => (isDropdownOpen = false)"
+    class="relative m-auto w-14"
+  >
     <div @click.stop="toggleDropdown" class="w-full cursor-pointer">
       {{ languages[selectedLanguage] }}
       <IconsCaret
