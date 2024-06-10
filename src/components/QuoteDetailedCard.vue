@@ -73,7 +73,7 @@ const toggleLike = () => {
     <img
       :src="props.quote.image"
       alt="quote cover image"
-      class="mt-2.5 h-lg w-full rounded-lg object-cover object-center"
+      class="mt-2.5 h-52 w-full rounded-lg object-cover object-center laptop:h-lg"
     />
     <div class="flex gap-6">
       <span class="flex items-center gap-3 text-2xl">

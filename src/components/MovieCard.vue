@@ -15,7 +15,7 @@ const { movie } = defineProps<{
   >
     <img
       :src="movie.poster"
-      class="h-93 h-full max-h-93 min-h-max w-full rounded-xl object-cover object-center"
+      class="h-76 w-full rounded-xl object-cover object-center laptop:h-93"
       alt="movie poster"
     />
     <p class="text-2xl font-medium">

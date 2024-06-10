@@ -38,8 +38,11 @@ const selectLanguage = (lang: string) => {
 </script>
 
 <template>
-  <div class="relative m-auto w-14">
-    <div @click="toggleDropdown" class="w-full cursor-pointer">
+  <div
+    v-click-outside="() => (isDropdownOpen = false)"
+    class="relative m-auto w-14"
+  >
+    <div @click.stop="toggleDropdown" class="w-full cursor-pointer">
       {{ languages[selectedLanguage] }}
       <IconsCaret
         class="absolute right-1 top-1 transition duration-300"

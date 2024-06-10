@@ -24,7 +24,8 @@ onMounted(() => {
   handleGoogleLogin(code, scope, authuser, hd, prompt)
     .then(({ data: { user } }) => {
       userStore.user = user;
-      modal.openWithProps("BaseDialogModal", {
+      router.replace({ name: "Profile" });
+      modal.openWithProps("InteractiveDialogModal", {
         iconName: "IconsCircleCheckMark",
         heading: t("handle_google_callback.success.heading"),
         message: t("handle_google_callback.success.message"),
@@ -36,7 +37,7 @@ onMounted(() => {
       });
     })
     .catch(() => {
-      modal.openWithProps("BaseDialogModal", {
+      modal.openWithProps("InteractiveDialogModal", {
         iconName: "IconsExpiredToken",
         heading: t("handle_google_callback.fail.heading"),
         message: t("handle_google_callback.fail.message"),

@@ -1,39 +1,11 @@
 <script setup lang="ts">
 import IconsSearch from "@/components/icons/IconsSearch.vue";
-import { ref, watch } from "vue";
-import { useRouter } from "vue-router";
-
-const active = ref(false);
-const inputRef = ref<HTMLInputElement | null>(null);
-const inputText = ref("");
-const router = useRouter();
-const timer = ref<NodeJS.Timeout | null>(null);
+import { useSearchBar } from "@/composables/useSearchBar";
 
 const props = defineProps<{
   page?: "movieList" | "quoteList";
 }>();
-
-watch(inputText, () => {
-  const input = inputText.value.trim();
-  if (timer.value) {
-    clearTimeout(Number(timer.value));
-  }
-  timer.value = setTimeout(() => {
-    if (input.startsWith("@")) {
-      router.push({ query: { "filter[title]": input.slice(1) } });
-    } else if (input.startsWith("#")) {
-      router.push({ query: { "filter[quote]": input.slice(1) } });
-    } else {
-      router.push({ query: { "filter[title]": "" } });
-    }
-  }, 550);
-});
-
-const focusInput = () => {
-  if (inputRef.value) {
-    (inputRef.value as HTMLInputElement).focus();
-  }
-};
+const { active, inputRef, inputText, focusInput } = useSearchBar();
 </script>
 
 <template>
@@ -46,7 +18,7 @@ const focusInput = () => {
     class="relative inline-flex items-center justify-end gap-4 text-xl"
   >
     <div class="relative flex cursor-pointer items-center gap-4">
-      <IconsSearch class="h-5 w-5 min-w-5" />
+      <IconsSearch class="h-5 w-5 min-w-5 fill-gray-400" />
       <transition name="fade" type="transition">
         <span
           v-show="active && !inputText"

@@ -21,7 +21,7 @@ const emit = defineEmits<{
     <img
       :src="props.movie.poster"
       alt="movie poster"
-      class="max-h-md w-full rounded-xl object-cover laptop:w-7/12"
+      class="h-76 w-full rounded-xl object-cover laptop:max-h-md laptop:min-h-md laptop:w-7/12"
     />
     <div class="flex max-w-xl flex-col gap-4 laptop:w-5/12">
       <div class="flex w-full justify-between">

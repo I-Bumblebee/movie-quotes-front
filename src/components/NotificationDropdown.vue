@@ -52,7 +52,7 @@ onMounted(() => {
       <IconsBell class="h-6 w-6 laptop:h-auto laptop:w-auto" />
       <span
         v-show="unreadNotifications.length > 0"
-        class="absolute right-0 top-0 -translate-y-1/4 translate-x-1/2 rounded-full bg-red-500 px-2"
+        class="absolute right-0 top-0 -translate-y-1/4 translate-x-1/2 rounded-full bg-red-500 px-1.5 laptop:px-2"
       >
         {{ unreadNotifications.length }}
       </span>
