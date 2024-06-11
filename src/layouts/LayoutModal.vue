@@ -15,17 +15,17 @@ const modal = useModal();
 
 <template>
   <div
-    class="fixed inset-0 h-full"
+    class="fixed inset-0 z-50 h-full"
     :class="props.blur ? 'backdrop-blur-sm backdrop-filter' : ''"
   >
     <div
-      class="h-full w-full bg-black bg-gradient-radial laptop:opacity-50"
+      class="h-full w-full bg-black bg-gradient-radial laptop:bg-gradient-none laptop:opacity-50"
       :class="props.class"
-    ></div>
+    />
   </div>
-  <div class="fixed inset-0">
+  <div class="fixed inset-0 z-50">
     <div
-      class="relative flex h-full w-full items-center justify-center overflow-y-scroll pb-24 text-white"
+      class="relative flex h-full w-full items-center justify-center overflow-y-scroll pb-24 font-helvetica text-white"
     >
       <slot />
       <IconsArrowIcon

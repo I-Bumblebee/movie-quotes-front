@@ -48,7 +48,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <LayoutModal class="opacity-100">
+  <LayoutModal class="laptop:opacity-100">
     <LoadingWheelModal />
   </LayoutModal>
 </template>

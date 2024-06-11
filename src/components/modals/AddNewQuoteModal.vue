@@ -49,7 +49,7 @@ const submitForm = handleSubmit((values) => {
 </script>
 
 <template>
-  <LayoutModal>
+  <LayoutModal :blur="false" class="laptop:bg-gradient-radial">
     <LoadingWheelModal v-if="uploadingNewQuote" />
     <div
       v-else
@@ -73,7 +73,7 @@ const submitForm = handleSubmit((values) => {
         <div class="flex items-center gap-6 text-xl">
           <img
             :src="user.user?.image"
-            class="h-10 w-10 rounded-full laptop:h-15 laptop:w-15"
+            class="h-10 w-10 rounded-full object-cover laptop:h-15 laptop:w-15"
             alt="profile picture"
           />
           {{ user.user?.name }}
@@ -138,7 +138,7 @@ const submitForm = handleSubmit((values) => {
           <BaseRedButton
             @click.stop.prevent="submitForm"
             :text="$t('add_new_quote_modal.submit_button_text')"
-            class="mt-2 py-2.5 text-xl laptop:mt-6"
+            class="my-2 py-2.5 text-xl laptop:mt-6"
           />
         </form>
       </div>
