@@ -74,9 +74,7 @@ const onSuccess = (email: string) => {
         <h1 class="inline-block text-3xl font-semibold">
           {{ $t("forgot_password_modal.forgot_password") }}
         </h1>
-        <p
-          class="mt-2.5 break-words text-sm font-medium text-stale-gray laptop:text-base"
-        >
+        <p class="mt-2.5 break-words text-sm text-stale-gray laptop:text-base">
           {{ $t("forgot_password_modal.forgot_password_message") }}
         </p>
       </div>
@@ -95,12 +93,12 @@ const onSuccess = (email: string) => {
         <BaseRedButton
           @click.capture="onSubmit"
           :text="$t('forgot_password_modal.send_instructions')"
-          class="border font-medium"
+          class="border"
         />
       </form>
       <button
         @click.prevent.stop="modal.open('LoginModal')"
-        class="mt-9 inline-flex select-none items-center gap-3 text-center font-medium text-stale-gray"
+        class="mt-9 inline-flex select-none items-center gap-3 text-center text-stale-gray"
       >
         <IconsArrowIcon />
         <span>

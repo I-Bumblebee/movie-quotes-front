@@ -43,7 +43,7 @@ const selectGenre = (genreId: number) => {
             'whitespace-nowrap text-base font-medium text-stale-gray'
           "
         >
-          Select Genre:
+          {{ $t("movie_genre_selector.select_genre") }}:
         </span>
         <GenreButton
           @click="unSelectGenre"
@@ -67,7 +67,7 @@ const selectGenre = (genreId: number) => {
       <div
         v-if="isOpen"
         v-click-outside="() => (isOpen = false)"
-        class="absolute left-0 top-16 z-50 flex flex-wrap gap-2.5 gap-y-2 rounded border border-stale-gray bg-cinder px-3.5 py-3"
+        class="absolute left-0 top-16 z-50 flex w-full flex-wrap gap-2.5 gap-y-2 rounded border border-stale-gray bg-cinder px-3.5 py-3"
       >
         <GenreButton
           @click="selectGenre"

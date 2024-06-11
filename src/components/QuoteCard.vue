@@ -38,7 +38,7 @@ const isMenuOpen = ref(false);
       <img
         :src="props.image"
         alt="quote image"
-        class="h-36 w-full max-w-min rounded-sm object-cover object-center laptop:max-w-56"
+        class="h-36 min-w-56 rounded-sm object-cover object-center laptop:w-56"
       />
       <p class="text-2xl italic text-gray-400">"{{ props.quote }}"</p>
     </div>

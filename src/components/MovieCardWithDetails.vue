@@ -24,12 +24,12 @@ const emit = defineEmits<{
       class="h-76 w-full rounded-xl object-cover laptop:max-h-md laptop:min-h-md laptop:w-7/12"
     />
     <div class="flex max-w-xl flex-col gap-4 laptop:w-5/12">
-      <div class="flex w-full justify-between">
+      <div class="flex w-full items-center justify-between">
         <h1 class="text-2xl font-medium text-almond">
           {{ props.movie.title }} ({{ props.movie.release_year }})
         </h1>
         <div
-          class="hidden items-center gap-6 rounded-2xl bg-white/5 px-7 py-2.5 text-xl leading-5 text-stale-gray laptop:flex"
+          class="hidden items-center gap-6 rounded-lg-plus bg-white/5 px-7 py-2.5 text-xl leading-5 text-stale-gray laptop:flex"
         >
           <button @click="() => emit('edit', props.movie.id)">
             <IconsPencil class="fill-white" />
@@ -40,7 +40,7 @@ const emit = defineEmits<{
           </button>
         </div>
       </div>
-      <div class="flex flex-wrap items-start gap-3 overflow-x-scroll">
+      <div class="mt-2 flex flex-wrap items-start gap-3 overflow-x-scroll">
         <GenreButton
           v-for="genre in props.movie.genres"
           :key="genre.name"
@@ -54,7 +54,7 @@ const emit = defineEmits<{
         >
         {{ props.movie.director }}
       </p>
-      <p class="text-lg">{{ props.movie.description }}</p>
+      <p class="mt-1.5 text-lg">{{ props.movie.description }}</p>
     </div>
   </div>
 </template>

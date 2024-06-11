@@ -24,7 +24,7 @@ const timeAgo = ref(dayjs(props.created_at).locale(locale.value).fromNow());
       <img
         :src="props.initiator.image"
         alt="initiators profile image"
-        class="h-12 w-12 rounded-full laptop:h-20 laptop:w-20"
+        class="h-12 w-12 rounded-full object-cover object-center laptop:h-20 laptop:w-20"
         :class="!props.is_read && 'border-2 border-seagreen'"
       />
       <div class="flex flex-col laptop:gap-3 laptop:text-xl">

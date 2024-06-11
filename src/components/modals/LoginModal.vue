@@ -85,7 +85,7 @@ const onSuccess = () => {
         <h1 class="text-2xl font-semibold laptop:text-3xl">
           {{ $t("login_modal.log_in_to_your_account") }}
         </h1>
-        <p class="font-base mt-2.5 font-medium text-stale-gray">
+        <p class="font-base mt-2.5 text-stale-gray">
           {{ $t("login_modal.welcome_back") }}
         </p>
       </div>
@@ -107,7 +107,7 @@ const onSuccess = () => {
           required
         />
         <div class="flex h-3.5 items-center justify-between text-white">
-          <label class="flex items-center gap-2 font-medium">
+          <label class="flex items-center gap-2">
             <input v-model="remember" type="checkbox" />
             {{ $t("login_modal.remember_me") }}
           </label>
@@ -122,12 +122,12 @@ const onSuccess = () => {
         <BaseRedButton
           @click.capture="onSubmit"
           :text="$t('login_modal.sign_in')"
-          class="border font-medium"
+          class="border"
         />
       </form>
       <button
         @click="loginWithGoogle"
-        class="mt-4 w-90 cursor-pointer rounded border border-gray-400 py-1.5 font-medium text-white hover:bg-white hover:bg-opacity-5"
+        class="mt-4 w-90 cursor-pointer rounded border border-gray-400 py-1.5 text-white hover:bg-white hover:bg-opacity-5"
       >
         <IconsGoogle class="mb-1 mr-1.5 inline" />
         {{ $t("login_modal.login_with_google") }}
@@ -136,7 +136,7 @@ const onSuccess = () => {
         {{ $t("login_modal.already_have_an_account") }}
         <button
           @click.prevent.stop="modal.open('RegisterModal')"
-          class="cursor-pointer font-medium text-indigo underline"
+          class="cursor-pointer text-indigo underline"
         >
           {{ $t("login_modal.sign_up") }}
         </button>

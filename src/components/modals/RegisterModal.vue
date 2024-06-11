@@ -89,7 +89,7 @@ const onSuccess = (email: string) => {
         <h1 class="text-2xl font-semibold laptop:text-3xl">
           {{ $t("register_modal.create_an_account") }}
         </h1>
-        <p class="font-base mt-2.5 font-medium text-stale-gray">
+        <p class="font-base mt-2.5 text-stale-gray">
           {{ $t("register_modal.start_your_journey") }}
         </p>
       </div>
@@ -126,12 +126,12 @@ const onSuccess = (email: string) => {
         <BaseRedButton
           @click="onSubmit"
           :text="$t('register_modal.sign_up')"
-          class="mt-2.5 border font-medium"
+          class="mt-2.5 border"
         />
       </form>
       <button
         @click="loginWithGoogle"
-        class="mt-4 w-90 cursor-pointer rounded border border-gray-400 py-1.5 font-medium text-white hover:bg-white hover:bg-opacity-5"
+        class="mt-4 w-90 cursor-pointer rounded border border-gray-400 py-1.5 text-white hover:bg-white hover:bg-opacity-5"
       >
         <IconsGoogle class="mb-1 mr-1.5 inline" />
         {{ $t("register_modal.sign_up_with_google") }}
@@ -140,7 +140,7 @@ const onSuccess = (email: string) => {
         {{ $t("register_modal.already_have_an_account") }}
         <button
           @click.prevent.stop="modal.open('LoginModal')"
-          class="cursor-pointer font-medium text-indigo underline"
+          class="cursor-pointer text-indigo underline"
         >
           {{ $t("register_modal.login") }}
         </button>

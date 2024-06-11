@@ -53,14 +53,14 @@ const toggleLike = () => {
     <div class="flex items-center gap-6">
       <img
         :src="props.quote.user.image"
-        class="h-10 w-10 rounded-full laptop:h-13 laptop:w-13"
+        class="h-10 w-10 rounded-full object-cover laptop:h-13 laptop:w-13"
         alt="profile picture"
       />
       {{ props.quote.user.name }}
     </div>
     <slot>
       <p>
-        "{{ props.quote.quote }}"
+        “{{ props.quote.quote }}”
         <span class="whitespace-nowrap">
           movie-
           <span class="font-medium text-almond">
@@ -73,7 +73,7 @@ const toggleLike = () => {
     <img
       :src="props.quote.image"
       alt="quote cover image"
-      class="mt-2.5 h-52 w-full rounded-lg object-cover object-center laptop:h-lg"
+      class="mt-2.5 h-52 w-full rounded-lg object-cover object-center laptop:h-lg laptop:min-w-4xl"
     />
     <div class="flex gap-6">
       <span class="flex items-center gap-3 text-2xl">
