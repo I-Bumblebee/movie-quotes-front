@@ -22,7 +22,7 @@ const { active, inputRef, inputText, focusInput } = useSearchBar();
       <transition name="fade" type="transition">
         <span
           v-show="active && !inputText"
-          class="absolute ml-9 whitespace-nowrap text-gray-400"
+          class="absolute ml-9 whitespace-nowrap text-gray-400/80"
         >
           {{ $t("search_bar.enter") }}
           <span class="text-white">@</span>
@@ -45,10 +45,14 @@ const { active, inputRef, inputText, focusInput } = useSearchBar();
         'w-2xl': active,
       }"
       :placeholder="!active ? $t('search_bar.search_by') : ''"
+      @keydown.enter="
+        active = false;
+        ($event.target as HTMLInputElement).blur();
+      "
     />
     <hr
       v-show="active"
-      class="absolute -bottom-4 left-0 w-full border-0 border-b border-stale-gray"
+      class="absolute -bottom-4 left-0 w-full overflow-hidden border-0 border-b border-stale-gray"
     />
   </div>
 </template>

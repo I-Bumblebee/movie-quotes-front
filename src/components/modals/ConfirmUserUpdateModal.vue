@@ -9,12 +9,12 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <LayoutModal class="opacity-5">
+  <LayoutModal class="bg-gradient-radial opacity-70" :blur="false">
     <div
       v-click-outside="() => emit('cancel')"
       class="relative mx-9 mb-80 box-content flex w-full flex-col items-center rounded-lg-plus text-white laptop:w-auto laptop:min-w-96 laptop:bg-steel-gray laptop:bg-gradient-none"
     >
-      <p class="mb-12 mt-14 text-center font-medium laptop:mx-5 laptop:text-lg">
+      <p class="mb-12 mt-14 text-center laptop:mx-5 laptop:text-lg">
         {{ $t("confirm_user_update_modal.text") }}
       </p>
       <hr

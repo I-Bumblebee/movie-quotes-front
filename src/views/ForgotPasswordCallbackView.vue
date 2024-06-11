@@ -15,7 +15,7 @@ modal.open("ResetPasswordModal");
 </script>
 
 <template>
-  <LayoutModal :opacity="100">
+  <LayoutModal class="laptop:bg-gradient-radial">
     <LoadingWheelModal />
   </LayoutModal>
 </template>

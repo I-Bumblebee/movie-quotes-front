@@ -21,8 +21,8 @@ const onHomePage = computed(() => route.name === "Home");
 
 <template>
   <header
-    class="box-border flex w-full items-center justify-between px-4 font-helvetica laptop:px-18"
-    :class="onHomePage ? 'px-4 py-6' : 'px-9 py-7'"
+    class="box-border flex w-full items-center justify-between px-4 py-6 font-helvetica laptop:px-18"
+    :class="onHomePage ? 'px-4 py-6' : 'px-9 py-7 laptop:py-6'"
   >
     <RouterLink
       :to="{ name: 'Quotes' }"
@@ -31,7 +31,7 @@ const onHomePage = computed(() => route.name === "Home");
     >
       MOVIE QUOTES
     </RouterLink>
-    <div v-if="!onHomePage" class="relative laptop:hidden">
+    <div v-if="!onHomePage" class="relative flex items-center laptop:hidden">
       <button @click.stop="isDropdownOpen = true">
         <IconsBurger class="cursor-pointer" />
       </button>

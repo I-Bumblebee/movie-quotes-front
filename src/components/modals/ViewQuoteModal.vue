@@ -42,7 +42,10 @@ const deleteQuote = () => {
 </script>
 
 <template>
-  <LayoutModal>
+  <LayoutModal
+    :blur="false"
+    class="laptop:bg-gradient-radial laptop:opacity-70"
+  >
     <LoadingWheelModal v-if="isLoading" />
     <div
       v-else

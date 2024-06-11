@@ -75,7 +75,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <LayoutModal closable>
+  <LayoutModal closable class="laptop:opacity-55">
     <LoadingWheelModal v-show="loading" />
     <div
       v-show="!loading"
@@ -86,9 +86,7 @@ onMounted(() => {
         <h1 class="inline-block text-3xl-plus font-semibold">
           {{ $t("reset_password_modal.create_new_password") }}
         </h1>
-        <p
-          class="mx-auto mt-2.5 w-90 break-words text-base font-medium text-stale-gray"
-        >
+        <p class="mx-auto mt-2.5 w-90 break-words text-base text-stale-gray">
           {{ $t("reset_password_modal.reset_password_message") }}
         </p>
       </div>
@@ -114,12 +112,12 @@ onMounted(() => {
         <BaseRedButton
           @click.capture="onSubmit"
           :text="$t('reset_password_modal.reset_password')"
-          class="border font-medium"
+          class="border"
         />
       </form>
       <button
         @click.prevent.stop="modal.open('LoginModal')"
-        class="mt-10 inline-flex select-none items-center gap-3 text-center font-medium text-stale-gray"
+        class="mt-10 inline-flex select-none items-center gap-3 text-center text-stale-gray"
       >
         <IconsArrowIcon />
         <span class="-mb-1">

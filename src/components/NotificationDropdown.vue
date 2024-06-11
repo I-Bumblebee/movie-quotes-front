@@ -40,7 +40,7 @@ onMounted(() => {
   window.Echo.channel(`User.${user.user?.id}.notifications`).listen(
     "NotifyUser",
     ({ notification }: { notification: Notification }) => {
-      notifications.value.push(notification);
+      notifications.value.unshift(notification);
     },
   );
 });

@@ -7,8 +7,6 @@ import { computed } from "vue";
 const { active, inputRef, inputText, focusInput } = useSearchBar();
 
 const inputIsEmpty = computed(() => inputText.value === "");
-
-// on enter focs set false
 </script>
 
 <template>
@@ -27,7 +25,7 @@ const inputIsEmpty = computed(() => inputText.value === "");
       :class="active ? 'w-full' : 'w-0 overflow-hidden'"
     >
       <div
-        class="flex items-center gap-8 border-b border-b-whitesmoke/30 px-8 py-5 text-base leading-5"
+        class="flex items-center gap-7 border-b border-b-whitesmoke/30 px-7 py-5 text-base leading-5"
       >
         <button @click.stop="active = false">
           <IconsArrowIcon class="h-4 w-4 fill-white" />
@@ -36,7 +34,7 @@ const inputIsEmpty = computed(() => inputText.value === "");
       </div>
       <div
         v-show="inputIsEmpty"
-        class="pointer-events-none absolute left-20 flex flex-col gap-4 pt-6 text-gray-400"
+        class="pointer-events-none absolute left-18 flex flex-col gap-4 pt-6 text-gray-400"
       >
         <p>
           {{ $t("search_bar.enter") }}
@@ -53,8 +51,8 @@ const inputIsEmpty = computed(() => inputText.value === "");
         v-model="inputText"
         ref="inputRef"
         type="text"
-        class="ml-20 mt-6 w-full bg-transparent outline-none"
-        @keydown="$event.key === 'Enter' && (active = false)"
+        class="ml-18 mt-6 w-full bg-transparent outline-none"
+        @keydown.enter="active = false"
       />
     </div>
   </div>

@@ -48,7 +48,10 @@ const submitForm = handleSubmit((values) => {
 </script>
 
 <template>
-  <LayoutModal>
+  <LayoutModal
+    :blur="false"
+    class="laptop:bg-gradient-radial laptop:opacity-70"
+  >
     <LoadingWheelModal v-if="uploadingNewQuote" />
     <div
       v-else
@@ -102,7 +105,7 @@ const submitForm = handleSubmit((values) => {
           <BaseRedButton
             :text="$t('write_new_quote_modal.submit_button_text')"
             type="submit"
-            class="mt-2 py-2.5 text-xl laptop:mt-6"
+            class="mb-3 mt-2 py-2.5 text-xl laptop:mt-6"
           />
         </form>
       </div>

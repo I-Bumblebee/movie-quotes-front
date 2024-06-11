@@ -2,12 +2,12 @@
 import type { MovieIndexContent } from "@/types/movieTypes";
 import IconsCamera from "@/components/icons/IconsCamera.vue";
 import IconsCaret from "@/components/icons/IconsCaret.vue";
-import { computed, onBeforeMount, ref, watch } from "vue";
+import { computed, ref } from "vue";
 import { useField } from "vee-validate";
 import MovieSelectorDropdownItem from "@/components/MovieSelectorDropdownItem.vue";
 import { vInfiniteScroll } from "@vueuse/components";
 import { getMovies } from "@/services/api/movie";
-import type { PaginatedResponse, Meta } from "@/types";
+import { usePaginatedFetch } from "@/composables/usePaginatedFetch";
 
 const isOpen = ref(false);
 const { value: movieId, setValue } = useField("movie_id");
@@ -21,31 +21,8 @@ const selectMovie = (movie: MovieIndexContent) => {
   isOpen.value = false;
 };
 
-const isLoading = ref(false);
-const movies = ref<MovieIndexContent[]>([]);
-const meta = ref<Meta>({ last_page: 1 });
-const moviesPage = ref(1);
-
-onBeforeMount(() => loadMovies(moviesPage.value));
-watch(moviesPage, (page) => loadMovies(page));
-
-const loadMovies = (page: number) => {
-  getMovies(page, "")
-    .then(({ data }: { data: PaginatedResponse<MovieIndexContent> }) => {
-      movies.value = [...movies.value, ...data.data];
-      meta.value = data.meta;
-    })
-    .finally(() => {
-      isLoading.value = false;
-    });
-};
-
-const onReachEnd = () => {
-  if (isLoading.value || meta.value.last_page === moviesPage.value) return;
-  isLoading.value = true;
-  moviesPage.value++;
-  loadMovies(moviesPage.value);
-};
+const { items: movies, onReachEnd } =
+  usePaginatedFetch<MovieIndexContent>(getMovies);
 </script>
 
 <template>
@@ -55,7 +32,11 @@ const onReachEnd = () => {
     :class="isOpen ? 'rounded-b-none' : ''"
   >
     <IconsCamera v-show="!selectedMovie" class="h-8 w-8 fill-white" />
-    <p v-show="!selectedMovie" class="text-white laptop:text-2xl">
+    <p
+      @click.stop="isOpen = !isOpen"
+      v-show="!selectedMovie"
+      class="cursor-pointer select-none text-white laptop:text-2xl"
+    >
       {{ $t("movie_selector_dropdown.choose_movie") }}
     </p>
     <p v-show="selectedMovie" class="text-white laptop:text-2xl">

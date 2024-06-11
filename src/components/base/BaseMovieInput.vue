@@ -24,7 +24,7 @@ const {
   meta,
 } = useField(props.name, undefined, {
   bails: false,
-  initialValue: props.defaultValue && `"${props.defaultValue}"`,
+  initialValue: props.defaultValue && `“${props.defaultValue}”`,
 });
 
 const filled = computed(() => !!fieldValue.value);
@@ -70,7 +70,7 @@ const handleInput = (event: Event) => {
       </span>
       <span
         v-if="props.language"
-        class="pointer-events-none float-right pl-2 not-italic leading-7 text-gray-400 laptop:text-xl"
+        class="pointer-events-none float-right pl-2 not-italic leading-7 text-stale-gray laptop:text-xl"
       >
         {{ props.language }}
       </span>

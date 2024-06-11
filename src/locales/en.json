@@ -20,7 +20,8 @@
       "quote": "I think we’re just gonna have to be secretly in love with earch other and leave it that",
       "title": "The Royal Tenenbaums, 2001"
     },
-    "register": "Sign Up"
+    "register": "Sign Up",
+    "footer_cc": "© 2022 movie quotes. All rights reserved."
   },
   "register_modal": {
     "email": {
@@ -239,6 +240,9 @@
     "to_search_movies": "to search movies",
     "to_search_quotes": "to search quotes"
   },
+  "movie_genre_selector": {
+    "select_genre": "Select Genre"
+  },
   "add_movie_modal": {
     "add_movie": "Add movie"
   },
@@ -286,6 +290,9 @@
   },
   "movie_selector_dropdown": {
     "choose_movie": "Choose movie"
+  },
+  "quote_list_view": {
+    "write_new_quote": "Write new quote"
   },
   "relative_time_locales": {
     "future": "in %s",

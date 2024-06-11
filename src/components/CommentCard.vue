@@ -9,7 +9,7 @@ const props = defineProps<Comment>();
     <div class="flex items-center gap-6 font-medium">
       <img
         :src="props.user.image"
-        class="h-10 w-10 rounded-full laptop:h-13 laptop:w-13"
+        class="h-10 w-10 rounded-full object-cover laptop:h-13 laptop:w-13"
         alt="profile picture"
       />
       {{ props.user.name }}

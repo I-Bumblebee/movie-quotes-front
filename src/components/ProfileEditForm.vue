@@ -22,13 +22,15 @@ const store = useUserAuthStore();
   <form
     v-if="store.user"
     @submit.prevent="emit('submit')"
-    class="flex w-full flex-col gap-8 px-8 laptop:w-96 laptop:min-w-xl-plus laptop:gap-12 laptop:px-0"
+    class="flex w-full flex-col gap-8 px-8 laptop:w-96 laptop:min-w-xl-plus laptop:gap-14 laptop:px-0"
+    @keydown.enter="emit('submit')"
   >
     <DisabledFormField
       @edit="emit('startEditingName')"
       :label="$t('profile_view.username')"
       :value="store.user.name"
       editable
+      class="placeholder-white"
     />
     <span v-if="props.editingName" class="w-full pr-16">
       <BaseFormField
@@ -42,6 +44,7 @@ const store = useUserAuthStore();
     <DisabledFormField
       :label="$t('profile_view.email')"
       :value="store.user.email"
+      class="placeholder-gray-400/100"
     />
     <DisabledFormField
       v-if="!store.user.oauth"
@@ -49,6 +52,7 @@ const store = useUserAuthStore();
       :label="$t('profile_view.password')"
       value="••••••••••••"
       editable
+      class="placeholder-gray-400/50"
     />
     <div v-if="props.editingPassword" class="flex w-full flex-col gap-12 pr-16">
       <div class="rounded border border-gray-400/30 p-6 text-white">

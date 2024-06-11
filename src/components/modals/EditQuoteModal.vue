@@ -78,7 +78,10 @@ const deleteQuote = () => {
 </script>
 
 <template>
-  <LayoutModal>
+  <LayoutModal
+    :blur="false"
+    class="laptop:bg-gradient-radial laptop:opacity-70"
+  >
     <LoadingWheelModal v-if="loading" />
     <div
       v-else
@@ -135,7 +138,7 @@ const deleteQuote = () => {
           <BaseRedButton
             :text="$t('edit_quote_modal.submit_button_text')"
             type="submit"
-            class="mt-2 py-2.5 text-xl laptop:mt-6"
+            class="mb-2 py-2.5 text-xl laptop:mt-6"
           />
         </form>
       </div>
