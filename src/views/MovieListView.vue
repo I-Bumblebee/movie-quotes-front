@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onBeforeMount, ref, watch } from "vue";
+import { computed } from "vue";
 import { getMovies } from "@/services/api/movie";
 import BaseRedButton from "@/components/base/BaseRedButton.vue";
 import MovieCard from "@/components/MovieCard.vue";
@@ -8,47 +8,16 @@ import { useRoute } from "vue-router";
 import { vElementVisibility } from "@vueuse/components";
 import SharedSearchBar from "@/components/shared/SharedSearchBar.vue";
 import type { MovieIndexContent } from "@/types/movieTypes";
-import type { PaginatedResponse } from "@/types";
+import { usePaginatedFetch } from "@/composables/usePaginatedFetch";
 
-const movies = ref<MovieIndexContent[]>([]);
-const page = ref(1);
-const lastPage = ref(1);
 const keyword = computed(() => (route.query["filter[title]"] || "") as string);
-
 const modal = useModal();
 const route = useRoute();
 
-onBeforeMount(() => {
-  fetchMovies("replace");
-});
-
-const fetchMovies = (mode: "extend" | "replace", resetPage?: boolean) => {
-  if (resetPage) {
-    page.value = 1;
-  }
-  getMovies(page.value, keyword.value).then(
-    ({ data }: { data: PaginatedResponse<MovieIndexContent> }) => {
-      if (mode === "replace") {
-        movies.value = data.data;
-      } else {
-        movies.value = [...movies.value, ...data.data];
-      }
-
-      lastPage.value = data.meta.last_page;
-    },
-  );
-};
-
-const onReachEnd = (state: boolean) => {
-  if (state && page.value < lastPage.value) {
-    page.value++;
-    fetchMovies("extend");
-  }
-};
-
-watch(keyword, () => {
-  fetchMovies("replace", true);
-});
+const { items: movies, onReachEnd } = usePaginatedFetch<MovieIndexContent>(
+  getMovies,
+  keyword,
+);
 </script>
 
 <template>
