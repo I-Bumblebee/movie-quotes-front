@@ -8,8 +8,9 @@ import { useForm } from "vee-validate";
 import { computed, ref } from "vue";
 import ConfirmUserUpdateModal from "@/components/modals/ConfirmUserUpdateModal.vue";
 import ProfileEditForm from "@/components/ProfileEditForm.vue";
-import ToastNotification from "@/ToastNotification.vue";
+import ToastNotification from "@/components/ToastNotification.vue";
 import ProfileEditFormMobile from "@/components/ProfileEditFormMobile.vue";
+import { useWindowSize } from "@vueuse/core";
 
 const editingName = ref(false);
 const editingPassword = ref(false);
@@ -21,6 +22,8 @@ const isConfirmModalVisible = ref(false);
 const confirmed = ref(false);
 
 const showToast = ref(false);
+
+const { width } = useWindowSize();
 
 const editingUser = computed(
   () => editingName.value || editingPassword.value || editingImage.value,
@@ -37,6 +40,14 @@ const { handleSubmit, setErrors } = useForm({
 });
 
 const updateUser = handleSubmit(async (values) => {
+  if (editingPassword.value && !values.password) {
+    return;
+  }
+
+  if (editingName.value && !values.name) {
+    return;
+  }
+
   if (!confirmed.value) {
     isConfirmModalVisible.value = true;
     return;
@@ -91,6 +102,7 @@ const displayToast = () => {
     v-if="showToast"
     @close="showToast = false"
     :message="$t('profile_view.toast_changes_updated_successfully')"
+    class="laptop:hidden"
   />
   <ConfirmUserUpdateModal
     v-if="isConfirmModalVisible"
@@ -108,21 +120,21 @@ const displayToast = () => {
       </h1>
       <button
         @click.stop.prevent="editingUser ? stopEditing() : $router.back()"
-        class="inline-block laptop:hidden"
+        class="inline-block -translate-y-0.5 laptop:hidden"
       >
-        <IconsArrowIcon class="scale-125" />
+        <IconsArrowIcon class="h-3.5 w-4" />
       </button>
     </div>
     <LoadingWheelModal v-show="!store.user" class="laptop:bg-transparent" />
     <div v-if="store.user" class="laptop:ml-16 laptop:inline-block">
       <div
-        class="flex flex-col items-center rounded-xl bg-white/5 pb-40 pt-6 laptop:inline-flex laptop:bg-cinder/100 laptop:px-48 laptop:pt-0"
+        class="flex flex-col items-center rounded-xl bg-white/5 pb-40 pt-6 laptop:inline-flex laptop:bg-cinder/100 laptop:px-48"
         :class="(editingPassword || editingName) && 'hidden laptop:flex'"
       >
         <img
           :src="imageUrl || store.user.image"
           alt="profile image"
-          class="h-47 w-47 rounded-full object-fill object-center laptop:-mt-20"
+          class="h-47 w-47 rounded-full object-cover object-center laptop:-mt-20"
         />
         <label type="file" class="mb-10 cursor-pointer text-xl">
           {{ $t("profile_view.upload_new_photo") }}
@@ -140,10 +152,11 @@ const displayToast = () => {
         @submit="updateUser"
         :editingName="editingName"
         :editingPassword="editingPassword"
+        v-if="width < 1399"
       />
       <div
         v-if="editingUser"
-        class="my-8 flex w-full justify-between gap-10 px-12 laptop:my-12 laptop:justify-end laptop:px-0 laptop:text-xl"
+        class="my-8 flex w-full justify-between gap-7 px-12 laptop:my-12 laptop:justify-end laptop:px-0 laptop:text-xl"
       >
         <button @click="stopEditing">
           {{ $t("profile_view.cancel") }}

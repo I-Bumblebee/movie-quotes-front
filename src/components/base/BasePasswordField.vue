@@ -29,20 +29,13 @@ const passwordVisible = computed(() => type.value === "text");
   >
     <IconsEyeOpen
       v-if="passwordVisible"
-      @click.prevent.stop="toggleType"
+      @click.stop="toggleType"
       class="mt-0.5 cursor-pointer fill-stale-gray"
     />
     <IconsEyeClosed
       v-else
-      @click.prevent.stop="toggleType"
+      @click.stop="toggleType"
       class="mt-0.5 cursor-pointer fill-stale-gray"
     />
   </BaseFormField>
 </template>
-
-<style scoped>
-input[type="password"]::-ms-reveal,
-input[type="password"]::-ms-clear {
-  display: none;
-}
-</style>

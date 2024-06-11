@@ -19,7 +19,7 @@ export function useSearchBar() {
       } else if (input.startsWith("#")) {
         router.push({ query: { "filter[quote]": input.slice(1) } });
       } else {
-        router.push({ query: { "filter[title]": input.slice(1) } });
+        router.push({ query: { "filter[title]": input.trim() } });
       }
     }, 550);
   });

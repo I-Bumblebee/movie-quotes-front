@@ -7,6 +7,10 @@ import SharedHeader from "@/components/shared/SharedHeader.vue";
   <SharedHeader class="absolute bg-white bg-opacity-5" />
   <section
     class="flex min-h-screen gap-32 bg-gradient-radial pt-28 font-helvetica text-white laptop:px-18 laptop:pt-30"
+    :class="{
+      'bg-150 laptop:bg-200':
+        $route.name === 'Profile' || $route.name === 'MovieDetail',
+    }"
   >
     <div class="hidden w-2/12 laptop:block">
       <SideBar />

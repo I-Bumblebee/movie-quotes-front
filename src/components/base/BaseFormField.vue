@@ -22,9 +22,7 @@ const props = withDefaults(defineProps<PropTypes>(), {
 
 const isDeleteButtonVisible = ref(false);
 
-const { value, meta, errors, resetField } = useField(props.name, undefined, {
-  bails: false,
-});
+const { value, meta, errors, resetField } = useField(props.name);
 
 const valid = computed(() => meta.dirty && meta.valid);
 const invalid = computed(() => meta.dirty && !meta.valid);
@@ -37,7 +35,7 @@ const hideDeleteIcon = () => {
 <template>
   <div v-click-outside="() => hideDeleteIcon()" class="w-full">
     <label
-      class="relative flex w-full flex-col gap-1.5 font-helvetica text-base font-medium leading-4 text-gray-700"
+      class="relative flex w-full flex-col gap-1.5 font-helvetica text-base leading-4 text-gray-700"
     >
       <span class="font-helvetica text-base text-white">
         {{ props.label }}
@@ -65,6 +63,7 @@ const hideDeleteIcon = () => {
               'border-gray-400 focus:ring-4 focus:ring-indigo focus:ring-opacity-20',
           ]"
           @focus="isDeleteButtonVisible = true"
+          @keydown.enter.tab="isDeleteButtonVisible = false"
         />
         <span
           class="absolute right-5 top-1/2 z-50 flex -translate-y-1/2 translate-x-1/2 gap-2"
