@@ -20,7 +20,8 @@
       "quote": "მგონია, ჩვენ უბრალოდ უნდა შევიყვაროთ ერთმანეთი ფარულად და ასე დავტოვოთ",
       "title": "სამეფო ნაძვისხე, 2001"
     },
-    "register": "რეგისტრაცია"
+    "register": "რეგისტრაცია",
+    "footer_cc": "© 2022 მუვი ქუოტეს, ყველა უფლება დაცულია"
   },
   "register_modal": {
     "email": {
@@ -36,7 +37,7 @@
       "placeholder": "პაროლი"
     },
     "password_confirmation": {
-      "label": "პაროლი",
+      "label": "გაიმეორე პაროლი",
       "placeholder": "პაროლი"
     },
     "create_an_account": "შექმენი ანგარიში",
@@ -179,6 +180,9 @@
     "news_feed": "ნიუს ფიდი",
     "list_of_movies": "ჩემი ფილმები"
   },
+  "movie_genre_selector": {
+    "select_genre": "მიუთითე ჟანრი"
+  },
   "add_movie_modal": {
     "add_movie": "დაამატე ფილმი"
   },
@@ -232,6 +236,9 @@
   "movie_selector_dropdown": {
     "choose_movie": "აირჩიე ფილმი"
   },
+  "quote_list_view": {
+    "write_new_quote": "დაწერე ახალი ციტატა"
+  },
   "notifications": {
     "notifications": "შეტყობინებები",
     "no_notifications": "შეტყობინებები არ არის",
@@ -259,7 +266,7 @@
     },
     "password_confirmation": {
       "required": "პაროლის დადასტურება სავალდებულოა",
-      "confirm": "პაროლი და პაროლის დადასტურება არ ემთხვევა"
+      "confirmed": "პაროლი და პაროლის დადასტურება არ ემთხვევა"
     },
     "title.ka": {
       "required": "სათაური ქართულად სავალდებულოა",
