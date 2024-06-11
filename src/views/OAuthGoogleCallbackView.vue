@@ -24,7 +24,7 @@ onMounted(() => {
   handleGoogleLogin(code, scope, authuser, hd, prompt)
     .then(({ data: { user } }) => {
       userStore.user = user;
-      router.replace({ name: "Profile" });
+      // router.replace({ name: "Profile" });
       modal.openWithProps("InteractiveDialogModal", {
         iconName: "IconsCircleCheckMark",
         heading: t("handle_google_callback.success.heading"),
@@ -52,7 +52,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <LayoutModal class="laptop:opacity-100">
+  <LayoutModal class="laptop:bg-gradient-radial">
     <LoadingWheelModal />
   </LayoutModal>
 </template>

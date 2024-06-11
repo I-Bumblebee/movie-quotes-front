@@ -75,7 +75,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <LayoutModal closable>
+  <LayoutModal closable class="laptop:opacity-55">
     <LoadingWheelModal v-show="loading" />
     <div
       v-show="!loading"

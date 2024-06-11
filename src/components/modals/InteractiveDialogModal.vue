@@ -16,7 +16,7 @@ const icon = defineAsyncComponent(
 </script>
 
 <template>
-  <LayoutModal>
+  <LayoutModal class="laptop:opacity-55">
     <div
       v-click-outside="() => modal.close()"
       class="relative mb-40 box-content flex w-10/12 flex-col items-center gap-7 rounded-lg-plus py-18 font-helvetica laptop:w-90 laptop:bg-steel-gray laptop:bg-gradient-none laptop:px-22"
@@ -28,14 +28,14 @@ const icon = defineAsyncComponent(
         {{ props.heading }}
       </h1>
       <p
-        class="font-base w-96 overflow-visible text-wrap px-12 text-center font-medium text-white laptop:px-0"
+        class="font-base w-96 overflow-visible text-wrap px-12 text-center text-white laptop:px-0"
       >
         {{ props.message }}
       </p>
       <BaseRedButton
         @click.stop.capture="props.action"
         :text="props.actionName"
-        class="mb-4 w-2/4 whitespace-nowrap border font-medium laptop:mb-0 laptop:mt-3 laptop:w-full"
+        class="mb-4 w-2/4 whitespace-nowrap border laptop:mb-0 laptop:mt-3 laptop:w-full"
       />
       <div
         class="absolute inset-0 -z-10 rotate-180 rounded-lg-plus bg-action-modal-bg opacity-30"

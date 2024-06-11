@@ -49,7 +49,10 @@ const submitForm = handleSubmit((values) => {
 </script>
 
 <template>
-  <LayoutModal :blur="false" class="laptop:bg-gradient-radial">
+  <LayoutModal
+    :blur="false"
+    class="laptop:bg-gradient-radial laptop:opacity-70"
+  >
     <LoadingWheelModal v-if="uploadingNewQuote" />
     <div
       v-else

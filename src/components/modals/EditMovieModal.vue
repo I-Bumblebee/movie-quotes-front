@@ -108,7 +108,10 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <LayoutModal :blur="false" class="laptop:bg-gradient-radial">
+  <LayoutModal
+    :blur="false"
+    class="laptop:bg-gradient-radial laptop:opacity-70"
+  >
     <div
       v-click-outside="() => modal.close()"
       v-if="user && !WaitingForMovieUpdate"

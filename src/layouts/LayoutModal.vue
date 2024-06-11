@@ -19,7 +19,7 @@ const modal = useModal();
     :class="props.blur ? 'backdrop-blur-sm backdrop-filter' : ''"
   >
     <div
-      class="h-full w-full bg-black bg-gradient-radial laptop:bg-gradient-none laptop:opacity-50"
+      class="h-full w-full bg-black bg-gradient-radial laptop:bg-gradient-none"
       :class="props.class"
     />
   </div>
