@@ -17,9 +17,9 @@ import { useI18n } from "vue-i18n";
 
 const { handleSubmit, setErrors, resetField } = useForm({
   validationSchema: {
-    name: "required|min:3|max:15|alpha_num",
+    name: "required|min:3|max:15|alpha_num|lowercase",
     email: "required|email",
-    password: "required|min:8|max:15|alpha_num",
+    password: "required|min:8|max:15|alpha_num|lowercase",
     password_confirmation: "required|confirmed:@password",
   },
 });

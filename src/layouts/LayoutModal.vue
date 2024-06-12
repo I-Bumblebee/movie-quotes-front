@@ -25,7 +25,7 @@ const modal = useModal();
   </div>
   <div class="fixed inset-0 z-50">
     <div
-      class="relative flex h-full w-full items-center justify-center overflow-y-scroll pb-24 font-helvetica text-white"
+      class="relative flex h-full w-full items-center justify-center overflow-y-scroll font-helvetica text-white laptop:pb-24"
     >
       <slot />
       <IconsArrowIcon
