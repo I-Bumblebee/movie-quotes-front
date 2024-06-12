@@ -19,9 +19,9 @@ const { t } = useI18n();
 const loading = ref(false);
 const router = useRouter();
 
-const { handleSubmit, setErrors, resetField } = useForm({
+const { handleSubmit, resetField, setFieldError } = useForm({
   validationSchema: {
-    email: "required|email",
+    login: "required",
     password: "required",
   },
 });
@@ -31,7 +31,7 @@ const { value: remember } = useField("remember");
 const onSubmit = handleSubmit(async (values) => {
   loading.value = true;
   await getCsrf();
-  login(values.email, values.password, values.remember)
+  login(values.login, values.password, values.remember)
     .then(({ data: { user } }) => {
       userStore.user = user;
       onSuccess();
@@ -42,9 +42,12 @@ const onSubmit = handleSubmit(async (values) => {
           data: { errors },
         },
       }) => {
-        setErrors(errors);
+        if (errors.email) {
+          setFieldError("login", errors.email);
+        } else {
+          setFieldError("login", errors.name);
+        }
         resetField("password");
-        resetField("password_confirmation");
       },
     )
     .finally(() => {
@@ -94,10 +97,10 @@ const onSuccess = () => {
         class="mx-auto mt-6 box-content flex w-90 flex-col gap-5 overflow-y-visible px-1 text-black"
       >
         <BaseFormField
-          name="email"
+          name="login"
           :label="$t('login_modal.email.label')"
           :placeholder="$t('login_modal.email.placeholder')"
-          type="email"
+          type="text"
           required
         />
         <BasePasswordField
