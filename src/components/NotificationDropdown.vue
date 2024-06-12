@@ -25,9 +25,13 @@ const markAllAsRead = () => {
   });
 };
 
-const openQuoteModal = (quoteId: number) => {
+const openQuoteModal = (quoteId: number, notificationId: number) => {
   modal.openWithProps("ViewQuoteModal", { quoteId });
   isOpen.value = false;
+  markAsRead([notificationId]);
+  unreadNotifications.value.find(
+    (notification) => notification.id === notificationId,
+  )!.is_read = true;
 };
 
 onMounted(() => {
@@ -63,7 +67,7 @@ onMounted(() => {
     </button>
     <div
       v-if="isOpen && notifications.length > 0"
-      class="absolute right-0 top-24 z-50 flex w-full flex-col gap-4 rounded-xl bg-black px-9 pb-8 pt-5 text-base laptop:right-18 laptop:box-content laptop:max-w-4xl laptop:px-8 laptop:pb-10 laptop:pt-10"
+      class="absolute right-0 top-24 z-50 flex w-full flex-col gap-4 rounded-xl bg-black px-9 pb-8 pt-5 text-base laptop:right-18 laptop:box-content laptop:max-w-4xl laptop:px-8 laptop:pb-13 laptop:pt-10"
     >
       <div class="mb-2 flex w-full items-center justify-between">
         <h3 class="text-xl font-medium laptop:text-3xl">
@@ -76,12 +80,14 @@ onMounted(() => {
           {{ $t("notifications.mark_all_as_read") }}
         </button>
       </div>
-      <NotificationCard
-        @click:viewQuote="openQuoteModal"
-        v-for="notification in notifications"
-        :key="notification.id"
-        v-bind="notification"
-      />
+      <div class="no-scrollbar flex max-h-2xl flex-col gap-4 overflow-scroll">
+        <NotificationCard
+          @click:viewQuote="openQuoteModal"
+          v-for="notification in notifications"
+          :key="notification.id"
+          v-bind="notification"
+        />
+      </div>
     </div>
     <div
       v-else-if="isOpen"
