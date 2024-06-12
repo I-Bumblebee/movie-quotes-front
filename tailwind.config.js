@@ -40,6 +40,7 @@ export default {
       maxHeight: {
         md: "28rem",
         lg: "32rem",
+        "2xl": "42.25rem",
       },
       width: {
         90: "22.5rem",
@@ -77,6 +78,7 @@ export default {
         beige: "#D1E7DD",
         teal: "#0F5132",
         dimgray: "#54535A",
+        darkgray: "#9C9A9A",
         bastille: "#24222F",
         blueviolet: "#9747FF",
         whitesmoke: "#EFEFEF",

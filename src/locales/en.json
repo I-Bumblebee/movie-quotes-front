@@ -30,15 +30,15 @@
     },
     "name": {
       "label": "Name",
-      "placeholder": "Name"
+      "placeholder": "At least 3 & max.15 lower case characters"
     },
     "password": {
       "label": "Password",
-      "placeholder": "Password"
+      "placeholder": "At least 8 & max.15 lower case characters"
     },
     "password_confirmation": {
       "label": "Password",
-      "placeholder": "Password"
+      "placeholder": "Confirm password"
     },
     "create_an_account": "Create an account",
     "start_your_journey": "Start your journey",
@@ -70,9 +70,13 @@
     "sign_up": "Sign Up",
     "already_have_an_account": "Already have an account?",
     "success_action" : {
-      "heading": "Welcome back!",
-      "message": "You are now logged in.",
+      "heading": "Welcome",
+      "message": "You are now logged in",
       "action_name": "View Quotes"
+    },
+    "error_422": {
+      "login": "Name/Email or password is incorrect",
+      "password": "Name/Email or password is incorrect"
     }
   },
   "validations": {
@@ -80,7 +84,8 @@
       "required": "Name is required",
       "min": "Name must be at least 3 characters",
       "max": "Name must be at most 15 characters",
-      "alpha_num": "Name must be alphanumeric"
+      "alpha_num": "Name must be alphanumeric",
+      "lowercase": "Name must be lowercase"
     },
     "email": {
       "required": "Email is required",
@@ -90,7 +95,8 @@
       "required": "Password is required",
       "min": "Password must be at least 8 characters",
       "max": "Password must be at most 15 characters",
-      "alpha_num": "Password must be alphanumeric"
+      "alpha_num": "Password must be alphanumeric",
+      "lowercase": "Password must be lowercase"
     },
     "password_confirmation": {
       "required": "Password confirmation is required",
@@ -221,9 +227,9 @@
     "new_password": "New password",
     "enter_new_password": "Enter new password",
     "confirm_new_password": "Confirm new password",
-    "password_should_contain": "password_should_contain",
+    "password_should_contain": "Password should contain",
     "eight_or_more_characters": "8 or more characters",
-    "fifteen_or_less_characters": "15 or less characters",
+    "fifteen_lowercase_characters": "15 lowercase characters",
     "cancel": "Cancel",
     "save": "Save",
     "save_changes": "Save changes",
@@ -235,7 +241,7 @@
     "total": "Total"
   },
   "search_bar": {
-    "search_by": "Search By",
+    "search_by": "Search",
     "enter": "Enter",
     "to_search_movies": "to search movies",
     "to_search_quotes": "to search quotes"
