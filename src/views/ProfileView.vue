@@ -31,10 +31,10 @@ const editingUser = computed(
 
 const store = useUserAuthStore();
 
-const { handleSubmit, setErrors } = useForm({
+const { handleSubmit, setErrors, values } = useForm({
   validationSchema: {
-    name: "min:3|max:15|alpha_num",
-    password: "min:8|max:15|alpha_num",
+    name: "min:3|max:15|alpha_num|lowercase",
+    password: "min:8|max:15|alpha_num|lowercase",
     password_confirmation: "confirmed:@password",
   },
 });
@@ -47,8 +47,7 @@ const updateUser = handleSubmit(async (values) => {
   if (editingName.value && !values.name) {
     return;
   }
-
-  if (!confirmed.value) {
+  if (!confirmed.value && width.value < 1399) {
     isConfirmModalVisible.value = true;
     return;
   }
@@ -64,8 +63,8 @@ const updateUser = handleSubmit(async (values) => {
       displayToast();
       stopEditing();
     })
-    .catch((err) => {
-      setErrors(err);
+    .catch(({ response }) => {
+      setErrors(response.data.errors);
     })
     .finally(() => {
       confirmed.value = false;
@@ -146,6 +145,7 @@ const displayToast = () => {
           @startEditingPassword="editingPassword = true"
           :editingName="editingName"
           :editingPassword="editingPassword"
+          :values="values"
         />
       </div>
       <ProfileEditFormMobile

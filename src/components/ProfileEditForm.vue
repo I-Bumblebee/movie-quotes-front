@@ -3,10 +3,13 @@ import DisabledFormField from "@/components/DisabledFormField.vue";
 import BaseFormField from "@/components/base/BaseFormField.vue";
 import BasePasswordField from "@/components/base/BasePasswordField.vue";
 import useUserAuthStore from "@/stores/userAuth";
+import type { GenericObject } from "vee-validate";
+import { computed } from "vue";
 
 const props = defineProps<{
   editingName: boolean;
   editingPassword: boolean;
+  values: GenericObject;
 }>();
 
 const emit = defineEmits<{
@@ -16,6 +19,15 @@ const emit = defineEmits<{
 }>();
 
 const store = useUserAuthStore();
+
+const eightOrMoreCharacters = computed(
+  () => props.values.password?.length >= 8,
+);
+const fifteenLowercaseCharacters = computed(
+  () =>
+    props.values.password?.length === 15 &&
+    props.values.password === props.values.password?.toLowerCase(),
+);
 </script>
 
 <template>
@@ -59,8 +71,24 @@ const store = useUserAuthStore();
         <p class="mb-4">
           {{ $t("profile_view.password_should_contain") }}
         </p>
-        <p>• {{ $t("profile_view.eight_or_more_characters") }}</p>
-        <p>• {{ $t("profile_view.fifteen_or_less_characters") }}</p>
+        <p :class="eightOrMoreCharacters && 'text-darkgray'">
+          <span
+            :class="eightOrMoreCharacters ? 'text-darkgray' : 'text-seagreen'"
+          >
+            •
+          </span>
+          {{ $t("profile_view.eight_or_more_characters") }}
+        </p>
+        <p :class="fifteenLowercaseCharacters && 'text-darkgray'">
+          <span
+            :class="
+              fifteenLowercaseCharacters ? 'text-darkgray' : 'text-seagreen'
+            "
+          >
+            •
+          </span>
+          {{ $t("profile_view.fifteen_lowercase_characters") }}
+        </p>
       </div>
       <BasePasswordField
         name="password"
