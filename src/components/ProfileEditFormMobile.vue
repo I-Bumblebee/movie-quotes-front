@@ -17,7 +17,7 @@ const emit = defineEmits<{
     @submit.prevent="emit('submit')"
     v-if="props.editingPassword || props.editingName"
     class="w-full rounded-xl bg-white/5 px-8 py-20 laptop:hidden"
-    @keydown="emit('submit')"
+    @keydown.enter="emit('submit')"
   >
     <BaseFormField
       v-if="props.editingName"

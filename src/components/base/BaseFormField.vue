@@ -66,7 +66,7 @@ const hideDeleteIcon = () => {
           @keydown.enter.tab="isDeleteButtonVisible = false"
         />
         <span
-          class="absolute right-5 top-1/2 z-50 flex -translate-y-1/2 translate-x-1/2 gap-2"
+          class="absolute right-5 top-1/2 z-10 flex -translate-y-1/2 translate-x-1/2 gap-2"
         >
           <slot>
             <IconsX

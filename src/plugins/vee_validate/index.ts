@@ -27,12 +27,15 @@ defineRule("alpha_num", alphaNum);
 defineRule("numeric", numeric);
 defineRule("length", length);
 defineRule("georgian", (value: string) => {
-  const pattern = /^[ა-ჰ\s.,!?(){}[\]<>:;"“„'`—~@#$%^&*_\-+=|\\/]*$/;
+  const pattern = /^[ა-ჰ0-9\s.,!?(){}[\]<>:;"“„'`—~@#$%^&*_\-+=|\\/]*$/;
   return pattern.test(value);
 });
 defineRule("english", (value: string) => {
-  const pattern = /^[a-zA-Z\s.,!?(){}[\]<>:;"“„'`—~@#$%^&*_\-+=|\\/]*$/;
+  const pattern = /^[a-zA-Z0-9\s.,!?(){}[\]<>:;"“„'`—~@#$%^&*_\-+=|\\/]*$/;
   return pattern.test(value);
+});
+defineRule("lowercase", (value: string) => {
+  return !value || value === value.toLowerCase();
 });
 
 const messages = {

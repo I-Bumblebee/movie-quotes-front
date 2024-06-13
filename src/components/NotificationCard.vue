@@ -9,7 +9,7 @@ import { useI18n } from "vue-i18n";
 const props = defineProps<Notification>();
 const { locale } = useI18n();
 const emit = defineEmits<{
-  (e: "click:viewQuote", id: number): void;
+  (e: "click:viewQuote", quote_id: number, notification_id: number): void;
 }>();
 
 const timeAgo = ref(dayjs(props.created_at).locale(locale.value).fromNow());
@@ -17,7 +17,7 @@ const timeAgo = ref(dayjs(props.created_at).locale(locale.value).fromNow());
 
 <template>
   <div
-    @click.stop="emit('click:viewQuote', props.quote_id)"
+    @click.stop="emit('click:viewQuote', props.quote_id, props.id)"
     class="flex w-full cursor-pointer flex-col gap-2.5 rounded border border-stale-gray/50 p-4 pr-8 laptop:flex-row laptop:items-center laptop:justify-between laptop:gap-0 laptop:p-5 laptop:pl-6"
   >
     <div class="flex items-center gap-2 laptop:gap-6">
