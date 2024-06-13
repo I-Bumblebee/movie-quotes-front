@@ -92,7 +92,7 @@ const submitForm = handleSubmit((values) => {
           <div class="flex flex-col justify-between truncate laptop:py-3">
             <p class="text-almond laptop:text-2xl laptop:font-medium">
               {{ props.title }}
-              <span class="text-base laptop:text-xl">
+              <span class="text-base laptop:text-2xl">
                 ({{ props.release_year }})
               </span>
             </p>
@@ -129,7 +129,7 @@ const submitForm = handleSubmit((values) => {
           <BaseMovieInput
             name="quote.ka"
             placeholder="“ციტატა ქართულ ენაზე”"
-            language="Geo"
+            language="ქარ"
             class="laptop:text-2xl"
             placeholderClass=" laptop:text-2xl italic"
             textarea

@@ -87,7 +87,7 @@ const deleteQuote = () => {
         />
         <BaseMovieInput
           name="quote.ka"
-          language="Geo"
+          language="ქარ"
           class="w-full italic"
           :defaultValue="quoteTranslations?.ka"
           disabled

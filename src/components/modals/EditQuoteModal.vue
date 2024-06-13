@@ -127,7 +127,7 @@ const deleteQuote = () => {
           />
           <BaseMovieInput
             name="quote.ka"
-            language="Geo"
+            language="ქარ"
             class="laptop:text-2xl"
             textarea
           />

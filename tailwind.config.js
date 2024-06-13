@@ -98,6 +98,8 @@ export default {
           "linear-gradient( 90deg, #000000 0%, rgba(0, 0, 0, 0) 55.21%, rgba(0, 0, 0, 0) 100%)",
         "landing-view-gradient":
           "linear-gradient(180deg, #11101A 0%, #08080D 50.52%, rgba(0, 0, 0, 0) 100%)",
+        "landing-view-gradient-laptop":
+          "linear-gradient(0, rgba(17,16,26,1) 0%, rgba(8,8,13,1) 100%)",
         "gradient-radial":
           "linear-gradient(187.16deg, #181623 0.07%, #191725 51.65%, #0D0B14 98.75%)",
         "movie-interstellar": 'url("@/assets/images/movie_interstellar.png")',

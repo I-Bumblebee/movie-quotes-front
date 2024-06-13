@@ -95,7 +95,7 @@ const submitForm = handleSubmit((values) => {
           <BaseMovieInput
             name="quote.ka"
             placeholder="ახალი ციტატა"
-            language="Geo"
+            language="ქარ"
             class="laptop:text-2xl"
             placeholderClass="text-stale-gray laptop:text-2xl"
             textarea
