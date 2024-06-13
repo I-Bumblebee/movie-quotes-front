@@ -23,7 +23,6 @@ const {
   errors,
   meta,
 } = useField(props.name, undefined, {
-  bails: false,
   initialValue: props.defaultValue && `“${props.defaultValue}”`,
 });
 
