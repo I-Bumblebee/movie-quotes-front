@@ -8,8 +8,9 @@ const props = defineProps<PropTypes>();
 
 <template>
   <button
-    class="cursor-pointer rounded border-scarlet bg-scarlet px-4 py-1.5 font-helvetica text-white hover:bg-firebrick active:bg-red-orange laptop:px-6"
+    class="flex cursor-pointer items-center justify-center gap-2 rounded border-scarlet bg-scarlet px-4 py-1.5 font-helvetica text-white hover:bg-firebrick active:bg-red-orange laptop:px-6"
   >
+    <slot />
     {{ props.text }}
   </button>
 </template>

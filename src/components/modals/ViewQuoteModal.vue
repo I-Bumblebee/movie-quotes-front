@@ -10,14 +10,14 @@ import QuoteDetailedCard from "@/components/QuoteDetailedCard.vue";
 import IconsPencil from "@/components/icons/IconsPencil.vue";
 import IconsTrashCan from "@/components/icons/IconsTrashCan.vue";
 import IconsCloseToast from "@/components/icons/IconsCloseToast.vue";
-import useModal from "@/stores/modalController";
+import useModal, { type QuoteModalProps } from "@/stores/modalController";
 import LoadingWheelModal from "@/components/modals/LoadingWheelModal.vue";
 import BaseMovieInput from "@/components/base/BaseMovieInput.vue";
 import type { TranslatedField } from "@/types";
 
 const modal = useModal();
 const quoteData = ref<DetailedQuote | null>(null);
-const props = defineProps<{ quoteId: number }>();
+const props = defineProps<QuoteModalProps>();
 const isLoading = ref(false);
 const quoteTranslations = ref<TranslatedField | null>(null);
 

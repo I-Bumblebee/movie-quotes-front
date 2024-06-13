@@ -41,7 +41,7 @@ const { active, inputRef, inputText, focusInput } = useSearchBar();
       type="text"
       class="bg-transparent placeholder-gray-400 outline-none transition-all duration-200 ease-in-out"
       :class="{
-        'w-24 ': !active,
+        'w-18 ': !active,
         'w-2xl': active,
       }"
       :placeholder="!active ? $t('search_bar.search_by') : ''"

@@ -8,6 +8,7 @@ import QuoteCard from "@/components/QuoteCard.vue";
 import useModal from "@/stores/modalController";
 import type { DetailedMovie } from "@/types/movieTypes";
 import type { Quote } from "@/types/quoteTypes";
+import IconsSquarePlus from "@/components/icons/IconsSquarePlus.vue";
 
 const modal = useModal();
 
@@ -35,6 +36,13 @@ const onDeleteMovie = (id: string) => {
     router.replace({ name: "Movies" });
   });
 };
+
+const onEditMovie = () => {
+  modal.openWithProps("EditMovieModal", {
+    movieId: String(movie.value?.id),
+    updateMovieView: (updatedMovie) => (movie.value = updatedMovie),
+  });
+};
 </script>
 
 <template>
@@ -43,9 +51,7 @@ const onDeleteMovie = (id: string) => {
       {{ $t("movie_detail_view.movie_description") }}
     </p>
     <MovieCardWithDetails
-      @edit="
-        modal.openWithProps('EditMovieModal', { movieId: String(movie.id) })
-      "
+      @edit="onEditMovie"
       @delete="onDeleteMovie(String(movie.id))"
       :movie="movie"
     />
@@ -55,7 +61,7 @@ const onDeleteMovie = (id: string) => {
       <p class="text-2xl font-medium laptop:m-0">
         {{ $t("movie_detail_view.quotes") }}
         <br class="block laptop:hidden" />
-        <span class="text-base laptop:text-xl">
+        <span class="text-base laptop:text-2xl">
           ({{ $t("movie_detail_view.total") }} {{ quotes.length }})
         </span>
       </p>
@@ -65,8 +71,10 @@ const onDeleteMovie = (id: string) => {
         <BaseRedButton
           @click="modal.openWithProps('AddNewQuoteModal', movie)"
           :text="$t('movie_detail_view.add_quote')"
-          class="border py-1 text-base laptop:border-none laptop:py-2.5 laptop:text-xl"
-        />
+          class="border py-1 pl-3 pr-3 text-base laptop:border-none laptop:py-2.5 laptop:pl-4 laptop:pr-4 laptop:text-xl"
+        >
+          <IconsSquarePlus class="fill-white" />
+        </BaseRedButton>
       </div>
     </div>
     <div class="my-12">
