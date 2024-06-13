@@ -5,16 +5,17 @@ import useUserAuthStore from "@/stores/userAuth";
 import { computed, onBeforeMount, ref } from "vue";
 import LoadingWheelModal from "@/components/modals/LoadingWheelModal.vue";
 import IconsCloseToast from "@/components/icons/IconsCloseToast.vue";
-import { type FormErrors, type GenericObject, useForm } from "vee-validate";
+import { useForm } from "vee-validate";
 import BaseMovieInput from "@/components/base/BaseMovieInput.vue";
 import BaseRedButton from "@/components/base/BaseRedButton.vue";
 import MovieGenreSelector from "@/components/MovieGenreSelector.vue";
 import MoviePosterInputField from "@/components/MoviePosterInputField.vue";
-import useModal from "@/stores/modalController";
+import useModal, { type AddMovieModalProps } from "@/stores/modalController";
 import { storeMovie } from "@/services/api/movie";
 import type { Genre } from "@/types";
-import { useI18n } from "vue-i18n";
 import type { StoreMovieRequestData } from "@/types/movieTypes";
+
+const props = defineProps<AddMovieModalProps>();
 
 const store = useUserAuthStore();
 const user = computed(() => store.user);
@@ -24,8 +25,6 @@ const waitingForMovieStore = ref(false);
 
 const posterFile = ref<File | null>(null);
 
-const { t } = useI18n();
-
 const validationSchema = {
   "title.ka": "required|georgian|max:45",
   "title.en": "required|english|max:45",
@@ -34,20 +33,15 @@ const validationSchema = {
   "director_name.en": "required|english|max:45",
   "description.ka": "required|georgian|max:500",
   "description.en": "required|english|max:500",
+  genres: "required|min:1",
 };
 
-const { handleSubmit, resetField, setFieldValue, values, setErrors, errors } =
-  useForm({
-    validationSchema,
-  });
+const { handleSubmit, setErrors } = useForm({
+  validationSchema,
+});
 
 const submitForm = handleSubmit(async (values) => {
-  const genres = Object.keys(values.genres).filter((key) => values.genres[key]);
-
-  if (!genres.length) {
-    setErrors({ genres: t("validations.genres.required") });
-    return;
-  }
+  const genres = values.genres.map((genre: { id: number }) => genre.id);
 
   if (!posterFile.value) return;
 
@@ -57,7 +51,8 @@ const submitForm = handleSubmit(async (values) => {
     genres,
     poster: posterFile.value,
   } as StoreMovieRequestData)
-    .then(() => {
+    .then(({ data: { data } }) => {
+      props.updateMovieList(data);
       modal.close();
     })
     .catch((error) => {
@@ -118,13 +113,7 @@ onBeforeMount(() => {
       >
         <BaseMovieInput name="title.en" label="Movie Name" language="Eng" />
         <BaseMovieInput name="title.ka" label="ფილმის სახელი" language="ქარ" />
-        <MovieGenreSelector
-          :genres="genres"
-          :resetField="resetField"
-          :setFieldValue="setFieldValue"
-          :selectedGenreIds="values.genres"
-          :errors="errors as FormErrors<GenericObject>"
-        />
+        <MovieGenreSelector :genres="genres" />
         <BaseMovieInput name="release_year" label="წელი/year" />
         <BaseMovieInput
           name="director_name.en"

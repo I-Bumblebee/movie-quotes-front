@@ -1,6 +1,6 @@
 import { markRaw } from "vue";
 import { defineStore } from "pinia";
-import type { DetailedMovie } from "@/types/movieTypes";
+import type { DetailedMovie, MovieIndexContent } from "@/types/movieTypes";
 
 export type InteractiveDialogModal = {
   iconName: string;
@@ -14,15 +14,21 @@ export type InteractiveDialogModal = {
 
 export type EditMovieModalProps = {
   movieId: string;
+  updateMovieView: (movie: DetailedMovie) => void;
 };
 
-type QuoteModalProps = {
+export type AddMovieModalProps = {
+  updateMovieList: (movie: MovieIndexContent) => void;
+};
+
+export type QuoteModalProps = {
   quoteId: number;
 };
 
 type PropTypes =
   | InteractiveDialogModal
   | EditMovieModalProps
+  | AddMovieModalProps
   | QuoteModalProps
   | DetailedMovie;
 
