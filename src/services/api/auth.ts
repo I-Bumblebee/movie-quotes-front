@@ -9,7 +9,7 @@ const login = async (login: string, password: string, remember: boolean) => {
   const { valid: tryingLoginViaEmail } = await validate(login, "email");
 
   return axios.post("/login", {
-    [tryingLoginViaEmail ? 'email' : 'name']: login,
+    [tryingLoginViaEmail ? "email" : "name"]: login,
     password,
     remember,
   });

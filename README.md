@@ -1,61 +1,85 @@
-# movie-quotes-front-luka-trapaidze
+<div style="display:flex; align-items: center">
+  <img src="readme/assets/logo.svg" alt="drawing"  height="100" style="margin-right: 20px; margin-top: 35px" />
+  <h1 style="position:relative; top: -6px" >Movie Quotes: Share Your Favorite Film Quotes </h1>
+</div>
 
-This template should help get you started developing with Vue 3 in Vite.
+---
 
-## Recommended IDE Setup
+Movie Quotes is an app dedicated to exploring and enjoying famous quotes from your favorite films. Dive into the world of cinema and relive iconic moments through memorable lines.
+#
+### Table of Contents
+* [Prerequisites](#prerequisites)
+* [Tech Stack](#tech-stack)
+* [Getting Started](#getting-started)
+* [Development](#development)
+* [API Documentation](#api-documentation)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Type Support for `.vue` Imports in TS
+#
+### Prerequisites
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+* <img src="readme/assets/node.svg" alt="node-logo" width="30" style="position: relative; top: 6px;margin-right:1rem;" />**node@20.11.0**
+* <img src="readme/assets/npm.svg" alt="npm-logo" width="45" style="position: relative; top: 17px;margin-right:1rem;" />**npm@10.2.4**
 
-## Customize configuration
+#
+### Tech Stack
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+* <img src="readme/assets/vue.svg" alt="vue-logo" height="30" style="position: relative; top: 4px;margin-right:1rem;" />**Vue.js V3**
+* <img src="readme/assets/vite.svg" alt="vite-logo" height="30" style="position: relative; top: 4px;margin-right:1rem;" />**Vite v5.2.11**
+* <img src="readme/assets/tailwind.svg" alt="tailwind-logo" height="35" style="position: relative; top: 4px;margin-right:1rem;" />**Tailwind CSS v3.4.3**
+* <img src="readme/assets/typescript.svg" alt="typescript-logo" height="30" style="position: relative; top: 4px;margin-right:1rem;" />**TypeScript v5.4.5**
 
-## Project Setup
+#
+### Getting Started
+1 . Clone the repository
+```sh
+git clone https://github.com/RedberryInternship/movie-quotes-front-luka-trapaidze.git
+```
 
+2 . Next step requires you to run *npm install* in order to install all the dependencies.
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+3 . Now we need to set our env file. Go to the root of your project and execute this command.
+```sh
+cp .env.example .env
+```
+And now you should provide **.env** file all the necessary environment variables:
+
+---
+####  
+**API:**
+> VITE_BACKEND_URL=...
+
+**App domain:**
+> VITE_APP_DOMAIN=...
+
+**Environment:**
+> VITE_APP_ENV=development | production
+
+**Laravel Reverb:**
+> VITE_REVERB_APP_KEY=...
+
+> VITE_REVERB_HOST=...
+
+> VITE_REVERB_PORT=...
+
+> VITE_REVERB_SCHEME=http | https
+
+##### Now, you should be good to go!
+
+
+#
+### Development
+
+You can now run the development server by executing:
 
 ```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+#
+### API Documentation
 
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
-
-```sh
-npm run test:e2e:dev
-```
-
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
-
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
-
-```sh
-npm run build
-npm run test:e2e
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+[API Documentation](https://documenter.getpostman.com/view/33136231/2sA3XLEPPg#c8264a92-1ed2-4593-afdb-d7f9556603cd "Postman")
