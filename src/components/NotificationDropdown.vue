@@ -7,11 +7,14 @@ import IconsBell from "@/components/icons/IconsBell.vue";
 import { getNotifications, markAsRead } from "@/services/api/notifications";
 import IconsPolygon from "@/components/icons/IconsPolygon.vue";
 import useModal from "@/stores/modalController";
+import { useQuoteActions } from "@/stores/quoteActions";
 
-const notifications = ref<Notification[]>([]);
 const user = useUserAuthStore();
 const modal = useModal();
+const quoteActions = useQuoteActions();
+
 const isOpen = ref(false);
+const notifications = ref<Notification[]>([]);
 
 const unreadNotifications = computed(() =>
   notifications.value.filter((notification) => !notification.is_read),
@@ -47,6 +50,12 @@ onMounted(() => {
       notifications.value.unshift(notification);
     },
   );
+
+  quoteActions.clearEmptyNotifications = (quoteId: number) => {
+    notifications.value = notifications.value.filter(
+      (notification) => notification.quote_id !== quoteId,
+    );
+  };
 });
 </script>
 

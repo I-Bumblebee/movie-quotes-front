@@ -25,7 +25,6 @@ export function useSearchBar() {
   });
 
   const focusInput = () => {
-    console.log(inputRef.value);
     if (inputRef.value) {
       (inputRef.value as HTMLInputElement).focus();
     }

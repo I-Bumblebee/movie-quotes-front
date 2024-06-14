@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { getQuotes } from "@/services/api/quote";
-import type { DetailedQuote } from "@/types/quoteTypes";
+import type { DetailedQuote, Quote } from "@/types/quoteTypes";
 import IconsPencilBox from "@/components/icons/IconsPencilBox.vue";
 import SharedSearchBar from "@/components/shared/SharedSearchBar.vue";
 import { vElementVisibility } from "@vueuse/components";
@@ -9,9 +9,13 @@ import { useRoute } from "vue-router";
 import QuoteDetailedCard from "@/components/QuoteDetailedCard.vue";
 import useModal from "@/stores/modalController";
 import { usePaginatedFetch } from "@/composables/usePaginatedFetch";
+import { useQuoteActions } from "@/stores/quoteActions";
 
 const route = useRoute();
 const modal = useModal();
+const quoteActions = useQuoteActions();
+
+const searchBarActive = ref(false);
 
 const quoteSearchParam = computed(
   () => (route.query["filter[quote]"] || "") as string,
@@ -26,7 +30,20 @@ const { items: quotes, onReachEnd } = usePaginatedFetch<DetailedQuote>(
   quoteSearchParam,
 );
 
-const searchBarActive = ref(false);
+onMounted(() => {
+  quoteActions.onCreateQuote = (quote: Quote | DetailedQuote) => {
+    quotes.value.unshift(quote as DetailedQuote);
+  };
+
+  quoteActions.onDeleteQuote = (quoteId: number) => {
+    quotes.value = quotes.value.filter((quote) => quote.id !== quoteId);
+  };
+
+  quoteActions.onEditQuote = (quote: Quote) => {
+    const index = quotes.value.findIndex((q) => q.id === quote.id);
+    quotes.value[index] = quote as DetailedQuote;
+  };
+});
 </script>
 
 <template>

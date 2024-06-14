@@ -16,6 +16,7 @@ import {
 import LoadingWheelModal from "@/components/modals/LoadingWheelModal.vue";
 import type { DetailedQuote } from "@/types/quoteTypes";
 import IconsTrashCan from "@/components/icons/IconsTrashCan.vue";
+import { useQuoteActions } from "@/stores/quoteActions";
 
 const props = defineProps<{
   quoteId: number;
@@ -23,6 +24,8 @@ const props = defineProps<{
 
 const modal = useModal();
 const user = useUserAuthStore();
+const quoteACtions = useQuoteActions();
+
 const loading = ref(false);
 const imageFile = ref<File | null>(null);
 const quote = ref<DetailedQuote | null>(null);
@@ -52,7 +55,8 @@ const submitForm = handleSubmit((values) => {
   loading.value = true;
 
   editQuote(values.quote, quote.value?.id as number, imageFile.value as File)
-    .then(() => {
+    .then(({ data }) => {
+      quoteACtions.onEditQuote(data.data);
       modal.close();
     })
     .catch((error) => {
@@ -67,6 +71,8 @@ const submitForm = handleSubmit((values) => {
 
 const deleteQuote = () => {
   loading.value = true;
+  quoteACtions.onDeleteQuote(props.quoteId);
+  quoteACtions.clearEmptyNotifications(props.quoteId);
   deleteQuoteRequest(props.quoteId)
     .then(() => {
       modal.close();

@@ -9,8 +9,10 @@ import useModal from "@/stores/modalController";
 import type { DetailedMovie } from "@/types/movieTypes";
 import type { Quote } from "@/types/quoteTypes";
 import IconsSquarePlus from "@/components/icons/IconsSquarePlus.vue";
+import { useQuoteActions } from "@/stores/quoteActions";
 
 const modal = useModal();
+const quoteActions = useQuoteActions();
 
 const movie = ref<DetailedMovie | null>(null);
 const quotes = ref<Quote[]>([]);
@@ -29,6 +31,19 @@ onBeforeMount(() => {
       quotes.value = data.data;
     },
   );
+
+  quoteActions.onDeleteQuote = (quoteId: number) => {
+    quotes.value = quotes.value.filter((quote) => quote.id !== quoteId);
+  };
+
+  quoteActions.onEditQuote = (quote: Quote) => {
+    const index = quotes.value.findIndex((q) => q.id === quote.id);
+    quotes.value[index] = quote;
+  };
+
+  quoteActions.onCreateQuote = (quote: Quote) => {
+    quotes.value.unshift(quote);
+  };
 });
 
 const onDeleteMovie = (id: string) => {
@@ -77,7 +92,7 @@ const onEditMovie = () => {
         </BaseRedButton>
       </div>
     </div>
-    <div class="my-12">
+    <div class="my-12 flex flex-col gap-9 laptop:gap-10">
       <QuoteCard v-for="quote in quotes" :key="quote.id" v-bind="quote" />
     </div>
   </div>

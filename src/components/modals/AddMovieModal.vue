@@ -52,7 +52,7 @@ const submitForm = handleSubmit(async (values) => {
     poster: posterFile.value,
   } as StoreMovieRequestData)
     .then(({ data: { data } }) => {
-      props.updateMovieList(data);
+      props.updateMovieList({ ...data, quotes_count: 0 });
       modal.close();
     })
     .catch((error) => {

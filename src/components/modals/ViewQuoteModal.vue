@@ -14,10 +14,14 @@ import useModal, { type QuoteModalProps } from "@/stores/modalController";
 import LoadingWheelModal from "@/components/modals/LoadingWheelModal.vue";
 import BaseMovieInput from "@/components/base/BaseMovieInput.vue";
 import type { TranslatedField } from "@/types";
+import { useQuoteActions } from "@/stores/quoteActions";
+
+const props = defineProps<QuoteModalProps>();
 
 const modal = useModal();
+const quoteActions = useQuoteActions();
+
 const quoteData = ref<DetailedQuote | null>(null);
-const props = defineProps<QuoteModalProps>();
 const isLoading = ref(false);
 const quoteTranslations = ref<TranslatedField | null>(null);
 
@@ -34,7 +38,8 @@ onBeforeMount(() => {
 });
 
 const deleteQuote = () => {
-  console.log("deleteQuote");
+  quoteActions.onDeleteQuote(props.quoteId);
+  quoteActions.clearEmptyNotifications(props.quoteId);
   deleteQuoteRequest(props.quoteId).finally(() => {
     modal.close();
   });

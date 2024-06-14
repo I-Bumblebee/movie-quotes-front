@@ -28,11 +28,13 @@ const modal = useModal();
       class="relative flex h-full w-full items-center justify-center overflow-y-scroll font-helvetica text-white laptop:pb-24"
     >
       <slot />
-      <IconsArrowIcon
-        @click.stop="modal.close"
+      <button
+        @click.stop.capture="modal.close"
         v-if="props.closable"
-        class="absolute right-9 top-8 h-4 w-4 rotate-180 scale-x-110 cursor-pointer laptop:hidden"
-      />
+        class="absolute right-9 top-8 cursor-pointer laptop:hidden"
+      >
+        <IconsArrowIcon class="h-4 w-4 rotate-180 scale-x-110" />
+      </button>
     </div>
   </div>
 </template>
