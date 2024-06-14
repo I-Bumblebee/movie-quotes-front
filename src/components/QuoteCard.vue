@@ -7,10 +7,20 @@ import { ref } from "vue";
 import type { Quote } from "@/types/quoteTypes";
 import useModal from "@/stores/modalController";
 import { deleteQuote } from "@/services/api/quote";
+import { useQuoteActions } from "@/stores/quoteActions";
 
 const props = defineProps<Quote>();
+
 const modal = useModal();
+const quoteActions = useQuoteActions();
+
 const isMenuOpen = ref(false);
+
+const onDeleteQuote = () => {
+  deleteQuote(props.id);
+  quoteActions.onDeleteQuote(props.id);
+  quoteActions.clearEmptyNotifications(props.id);
+};
 </script>
 
 <template>
@@ -24,7 +34,7 @@ const isMenuOpen = ref(false);
       <IconsDots />
       <QuoteCardMenu
         v-if="isMenuOpen"
-        @delete="deleteQuote(props.id)"
+        @delete="onDeleteQuote"
         @edit="modal.openWithProps('EditQuoteModal', { quoteId: props.id })"
         @show="modal.openWithProps('ViewQuoteModal', { quoteId: props.id })"
         @close="isMenuOpen = false"

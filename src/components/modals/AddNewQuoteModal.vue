@@ -12,9 +12,12 @@ import BaseRedButton from "@/components/base/BaseRedButton.vue";
 import { addQuote } from "@/services/api/quote";
 import LoadingWheelModal from "@/components/modals/LoadingWheelModal.vue";
 import GenreButton from "@/components/GenreButton.vue";
+import { useQuoteActions } from "@/stores/quoteActions";
 
 const modal = useModal();
 const user = useUserAuthStore();
+const quoteActions = useQuoteActions();
+
 const uploadingNewQuote = ref(false);
 
 const props = defineProps<DetailedMovie>();
@@ -34,7 +37,8 @@ const submitForm = handleSubmit((values) => {
   uploadingNewQuote.value = true;
 
   addQuote(values.quote, imageFile.value, props.id)
-    .then(() => {
+    .then(({ data }) => {
+      quoteActions.onCreateQuote(data.data);
       modal.close();
     })
     .catch((error) => {
