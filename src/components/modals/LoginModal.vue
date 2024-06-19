@@ -33,8 +33,9 @@ const onSubmit = handleSubmit(async (values) => {
   await getCsrf();
   login(values.login, values.password, values.remember)
     .then(({ data: { user } }) => {
+      modal.close();
       userStore.user = user;
-      onSuccess();
+      router.replace({ name: "Quotes" });
     })
     .catch(
       ({
@@ -59,19 +60,6 @@ const loginWithGoogle = () => {
   loading.value = true;
   getGoogleLoginRedirectUrl().then(({ data: { url } }) => {
     window.location.href = url;
-  });
-};
-
-const onSuccess = () => {
-  router.push({ name: "Quotes" });
-  modal.openWithProps("InteractiveDialogModal", {
-    iconName: "IconsCircleCheckMark",
-    heading: t("login_modal.success_action.heading"),
-    message: t("login_modal.success_action.message"),
-    actionName: t("login_modal.success_action.action_name"),
-    action: () => {
-      modal.close();
-    },
   });
 };
 </script>
