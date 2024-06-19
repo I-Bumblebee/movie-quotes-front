@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import IconsQuote from "@/components/icons/IconsQuote.vue";
-import { defineProps } from "vue";
 import type { MovieIndexContent } from "@/types/movieTypes";
 
 const { movie } = defineProps<{
