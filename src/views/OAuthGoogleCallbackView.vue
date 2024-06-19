@@ -24,17 +24,7 @@ onMounted(() => {
   handleGoogleLogin(code, scope, authuser, hd, prompt)
     .then(({ data: { user } }) => {
       userStore.user = user;
-      // router.replace({ name: "Profile" });
-      modal.openWithProps("InteractiveDialogModal", {
-        iconName: "IconsCircleCheckMark",
-        heading: t("handle_google_callback.success.heading"),
-        message: t("handle_google_callback.success.message"),
-        actionName: t("handle_google_callback.success.action_name"),
-        action: () => {
-          router.replace({ name: "Quotes" });
-          modal.close();
-        },
-      });
+      router.replace({ name: "Quotes" });
     })
     .catch(() => {
       modal.openWithProps("InteractiveDialogModal", {
