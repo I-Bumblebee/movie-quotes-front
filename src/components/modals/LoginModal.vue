@@ -8,14 +8,12 @@ import BaseFormField from "@/components/base/BaseFormField.vue";
 import BaseRedButton from "@/components/base/BaseRedButton.vue";
 import { getCsrf, getGoogleLoginRedirectUrl, login } from "@/services/api/auth";
 import { useForm, useField } from "vee-validate";
-import { useI18n } from "vue-i18n";
 import { ref } from "vue";
 import useUserAuthStore from "@/stores/userAuth";
 import { useRouter } from "vue-router";
 
 const modal = useModal();
 const userStore = useUserAuthStore();
-const { t } = useI18n();
 const loading = ref(false);
 const router = useRouter();
 
