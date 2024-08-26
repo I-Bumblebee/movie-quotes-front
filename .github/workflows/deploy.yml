@@ -1,0 +1,41 @@
+name: Deploy CI/CD
+
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+        with: 
+          node-version: 20
+      - name: install npm dependencies
+        run: npm ci
+      - name: run linter
+        run: npm run lint
+  deploy:
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set ssh key 
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+      - name: Deploy to Server
+        if: ${{ success() }}
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} << EOF
+            export NODE_OPTIONS='--max-old-space-size=4096'
+            cd apps
+            cd movie-quotes-front-luka-trapaidze
+            git pull
+            npm i
+            npm run build
+          EOF
+    
+  
